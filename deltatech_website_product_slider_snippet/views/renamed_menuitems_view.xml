@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="new_shop_menu" model="website.menu">
+            <field name="name">Plant A Tree</field>
+            <field name="url">/shop</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+    </data>
+</odoo>

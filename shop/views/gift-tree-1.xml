@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--        <template id="gift_tree_1" name="Gift Tree 1">-->
+<!--            <t t-name="website.gift-a-tree-1">-->
+<!--                <t t-call="website.layout">-->
+<!--                    <div id="wrap" class="oe_structure">-->
+<!--                        <section class="s_text_block pt32 pb32 o_colored_level" data-name="Text block">-->
+<!--                            <div class="container">-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-lg-2 pt32 pb32"/>-->
+<!--                                    <div class="col-lg-8 pt32 pb32 o_colored_level">-->
+<!--                                        <div class="green_box1 ls-2">DEAR JACK:-->
+<!--                                            <br/>-->
+<!--                                            personal message-->
+<!--                                        </div>-->
+<!--                                        <div class="green_headn fs_47 pt136 ls-2 pb72" style="text-align: center; ">Send-->
+<!--                                            it by-->
+<!--                                        </div>-->
+<!--                                        <div class="row pt32 pb32 ls-2">-->
+<!--                                            <div class="col-lg-3 o_colored_level">-->
+<!--                                                <img class="img-fluid o_we_custom_image d-block mx-auto"-->
+<!--                                                     src="shop/static/src/images/bullet.png" data-original-title=""-->
+<!--                                                     title="" aria-describedby="tooltip254633" loading="lazy" alt=""-->
+<!--                                                     data-original-id="656"-->
+<!--                                                     data-original-src="shop/static/src/images/bullet.png"-->
+<!--                                                     data-mimetype="image/png" data-resize-width="24"/>-->
+<!--                                                <div class="tree_detail fs_34 pt16">sms</div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-lg-3 o_colored_level">-->
+<!--                                                <img class="img-fluid o_we_custom_image d-block mx-auto"-->
+<!--                                                     src="shop/static/src/images/bullet.png" data-original-title=""-->
+<!--                                                     title="" aria-describedby="tooltip254633" loading="lazy" alt=""-->
+<!--                                                     data-original-id="656"-->
+<!--                                                     data-original-src="shop/static/src/images/bullet.png"-->
+<!--                                                     data-mimetype="image/png" data-resize-width="24"/>-->
+<!--                                                <div class="tree_detail fs_34 pt16">whatsapp</div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-lg-3 o_colored_level">-->
+<!--                                                <img class="img-fluid o_we_custom_image d-block mx-auto"-->
+<!--                                                     src="shop/static/src/images/bullet.png" data-original-title=""-->
+<!--                                                     title="" aria-describedby="tooltip254633" loading="lazy" alt=""-->
+<!--                                                     data-original-id="656"-->
+<!--                                                     data-original-src="shop/static/src/images/bullet.png"-->
+<!--                                                     data-mimetype="image/png" data-resize-width="24"/>-->
+<!--                                                <div class="tree_detail fs_34 pt16">e-mail</div>-->
+<!--                                            </div>-->
+<!--                                            <div class="col-lg-3 o_colored_level">-->
+<!--                                                <img class="img-fluid o_we_custom_image d-block mx-auto"-->
+<!--                                                     src="shop/static/src/images/bullet.png" data-original-title=""-->
+<!--                                                     title="" aria-describedby="tooltip254633" loading="lazy" alt=""-->
+<!--                                                     data-original-id="656"-->
+<!--                                                     data-original-src="shop/static/src/images/bullet.png"-->
+<!--                                                     data-mimetype="image/png" data-resize-width="24"/>-->
+<!--                                                <div class="tree_detail fs_34 pt16">messenger</div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="col-lg-2 pt32 pb32"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </section>-->
+<!--                    </div>-->
+<!--                </t>-->
+<!--            </t>-->
+
+<!--        </template>-->
+
+
+
+
+
+    <template id="welcome_trees" name="Welcome">
+        <t t-name="website.welcome-trees">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="s_text_block pt32 pb32 o_colored_level" data-name="Text block">
+                        <div class="container">
+                            <form action="email-data" class="pt64" method="POST"
+                                  enctype="multipart/form-data">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="row">
+                                    <div class="col-lg-2 pt32 pb32"/>
+                                    <div class="col-lg-8 pt32 pb32 o_colored_level">
+
+                                        <span t-raw="temp"/>
+
+                                        <div class="green_box1 ls-2">
+
+                                            <br/>
+
+
+                                            DEAR :
+                                            <span t-esc="dear_name"/>
+<!--                                            <textarea name="dear_name" id="personal_name" rows="3" cols="50"-->
+<!--                                                      class="txtarea"/>-->
+                                            <input type="hidden" name="res_id" id="res_id" t-att-value="dear_name"/>
+                                            <br/>
+                                            <span t-esc="mail_msg"/>
+<!--                                             <textarea name="mail_name" id="mail_name" rows="3" cols="50"-->
+<!--                                                      class="txtarea"/>-->
+                                             <input type="hidden" name="mail_id" id="mail_id" t-att-value="mail_msg"/>
+
+
+
+                                        </div>
+                                        <div class="green_headn fs_47 pt136 ls-2 pb72" style="text-align: center; ">Send
+                                            it by
+                                        </div>
+                                        <div class="row pt32 pb32 ls-2">
+                                            <div class="col-lg-3 o_colored_level">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="gift_msg_radio"
+                                                           id="sms" value="sms"/>
+                                                    <label class="form-check-label" for="sms">
+                                                        SMS
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 o_colored_level">
+                                                <div class="col-lg-3 o_colored_level">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="gift_msg_radio"
+                                                               id="whatsapp" value="whatsapp"/>
+                                                        <label class="form-check-label" for="whatsapp">
+                                                            WhatsApp
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 o_colored_level">
+                                                <div class="col-lg-3 o_colored_level">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="gift_msg_radio"
+                                                               id="email" value="email"/>
+                                                        <label class="form-check-label" for="email">
+                                                            e-mail
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row pt32 pb32 ls-2">
+                                                <div class="col-lg-3 o_colored_level">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                               name="gift_msg_radio"
+                                                               id="fb_msgnr" value="fb_msgnr"/>
+                                                        <label class="form-check-label" for="fb_msgnr">
+                                                            Messenger
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 pt32 pb32"/>
+                                </div>
+                                <!--                            </t>-->
+                                <button class="btn btn_fb btn_min_width" type="submit">Next</button>
+
+                            </form>
+
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </t>
+
+    </template>
+
+</odoo>

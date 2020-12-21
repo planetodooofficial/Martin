@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_frontend" name="slot_booking_assets" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/shop/static/src/css/180_earth.css"/>
+
+                <script type="text/javascript" src="/shop/static/src/js/website.js"></script>
+                <script type="text/javascript" src="/shop/static/src/js/carousel.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

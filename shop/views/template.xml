@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_cart" model="website.menu">
+            <field name="name">Cart</field>
+            <field name="url">/cart</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+
+        <template id="shop_cart" name="Cart Search">
+        <t t-name="website.cart">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty">
+                    <section class="s_text_image pt32 pb32" data-name="Image - Text">
+                        <div class="container">
+                            <div class="row text-left">
+                                <img src="shop/static/src/images/cart_big.png" class="img-fluid o_we_custom_image"
+                                     alt="Odoo • Image and Text" data-original-title="" title=""
+                                     aria-describedby="tooltip696994" loading="lazy"/>
+                                <span class="green_head fs_65 pt16 ln_65">
+                                    My Shopping<br/>Cart
+
+                                </span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pt32 pb32 o_colored_level" data-name="Title">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="product o_colored_level">
+                                    <div class="product-removal">
+                                        <span class="fa fa-minus-circle" data-original-title="" title=""
+                                              aria-describedby="tooltip524916"/>
+                                    </div>
+                                    <div class="product-details">
+                                        <div class="type_box_cart">type2</div>
+                                    </div>
+                                    <div id="my-input-container" class="product-quantity">
+                                        <input type="number" id="my-input" value="10"/>
+                                        <span id="my-suffix" style="left: 32.022px;">TREES</span>
+                                    </div>
+                                    <div class="product-line-price"><img class="img-fluid o_we_custom_image"
+                                                                         src="shop/static/src/images/cart_loc.png"
+                                                                         loading="lazy" data-original-title="" title=""
+                                                                         aria-describedby="tooltip979983" alt=""
+                                                                         data-original-id="648"
+                                                                         data-original-src="shop/static/src/images/cart_loc.png"
+                                                                         data-mimetype="image/png"
+                                                                         data-resize-width="27"/>&amp;nbsp;&amp;nbsp;&amp;nbsp;
+                                        MALAWI
+                                    </div>
+                                    <div class="product-image">
+                                        <img src="shop/static/src/images/trees_cart.png" data-original-title=""
+                                             title="" aria-describedby="tooltip781146" loading="lazy" alt=""
+                                             data-original-id="649"
+                                             data-original-src="shop/static/src/images/trees_cart.png"
+                                             data-mimetype="image/png" data-resize-width="100"/>
+                                    </div>
+                                    <div class="product-price">20,00</div>
+                                </div>
+                            </div>
+                            <!--    <div class="row s_nb_column_fixed">
+                                  <div class="product o_colored_level">
+                                    <div class="product-removal">
+                                      <span class="fa fa-minus-circle" data-original-title="" title="" aria-describedby="tooltip524916"/>
+                                    </div>
+                                    <div class="product-details">
+                                      <div class="type_box_cart">type3</div>
+                                    </div>
+                                    <div id="my-input-container" class="product-quantity">
+                                      <input type="number" id="my-input" value="5"/>
+                                      <span id="my-suffix" style="left: 66.879px;">TREES</span>
+                                    </div>
+                                    <div class="product-line-price"><img class="img-fluid o_we_custom_image" src="/web/image/653-92a8c372/cart_loc.png" loading="lazy"/>&amp;nbsp;&amp;nbsp;&amp;nbsp; MALAWI</div>
+                                    <div class="product-image">
+                                      <img src="/web/image/655-4f5d7d39/trees_cart.png" data-original-title="" title="" aria-describedby="tooltip781146" loading="lazy" alt="" data-original-id="649" data-original-src="/web/image/649-3866707b/trees_cart.png" data-mimetype="image/png" data-resize-width="100"/>
+                                    </div>
+                                    <div class="product-price">10,00</div>
+                                  </div>
+                                </div> -->
+                            <div class="row s_nb_column_fixed">
+                                <div class="product green_head">
+                                    <span class="fa fa-plus-circle"/>
+                                    <span class="pl-3 fs_13 ls_2">ADD MORE TREES!</span>
+                                </div>
+                            </div>
+                            <div class="row pb64">
+                                <div class="total_price">
+                                    <span class="pr-3">TOTAL:</span>
+                                    € 30,00
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 black_head">*WHAT IS INCLUDED?</div>
+                                <div class="col-lg-7"/>
+                            </div>
+                            <div class="row float-right pb32">
+                                <a href="/payment-option" class="btn btn-primary-rounded" data-original-title="" title=""
+                                   aria-describedby="tooltip791089">CONTINUE
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <script type="text/javascript">
+                        const inputElement = document.getElementById('my-input');
+                        const suffixElement = document.getElementById('my-suffix');
+
+
+                        inputElement.addEventListener('input', updateSuffix);
+
+                        updateSuffix();
+
+                        function updateSuffix() {
+                        const width = getTextWidth(inputElement.value, '27px walrus');
+                        suffixElement.style.left = width + 'px';
+                        }
+
+
+                        /**
+                        * Uses canvas.measureText to compute and return the width of the given text of given font in
+                        pixels.
+                        *
+                        * @param {String} text The text to be rendered.
+                        * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px
+                        verdana").
+                        *
+                        * @see
+                        https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
+                        */
+                        function getTextWidth(text, font) {
+                        // re-use canvas object for better performance
+                        var canvas = getTextWidth.canvas || (getTextWidth.canvas = document.createElement("canvas"));
+                        var context = canvas.getContext("2d");
+                        context.font = font;
+                        var metrics = context.measureText(text);
+                        return metrics.width;
+                        }
+                    </script>
+                </div>
+            </t>
+        </t>
+        </template>
+
+    </data>
+</odoo>
+        

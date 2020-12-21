@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <data>-->
+<!--        <record id="menu_payment_options_tree_form" model="website.menu">-->
+<!--            <field name="name">PAYMENT OPTIONS</field>-->
+<!--            <field name="url">/payment-option</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+        <template id="pay_option" name="payment options">
+        <t t-name="website.payment-option">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure oe_empty"/>
+                <section class="s_text_image pt32 pb32" data-name="Image - Text">
+                    <div class="container">
+                        <div class="row text-left">
+                            <span class="green_head fs_65 pt16 ln_65">
+                                Paymemt<br/>Options
+
+                            </span>
+
+
+                        </div>
+
+                        <div class="row float-right pt96 pb32">
+                            <a href="/shopping-thankyou" class="btn btn-primary-rounded" data-original-title="" title=""
+                               aria-describedby="tooltip791089">SAVE
+                            </a>
+
+                        </div>
+                    </div>
+                </section>
+            </t>
+        </t>
+        </template>
+<!--    </data>-->
+</odoo>

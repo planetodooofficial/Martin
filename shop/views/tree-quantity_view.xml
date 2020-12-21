@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <data>-->
+<!--        <record id="menu_shop_treequantity" model="website.menu">-->
+<!--            <field name="name">Tree Quantity</field>-->
+<!--            <field name="url">/tree-quantity</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+
+
+        <template id="tree_quantity" name="Tree Quantity">
+            <t t-name="website.tree-quantity">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_picture pt48 pb24" data-name="Picture">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-12 s_title pt16 pb16" data-name="Title">
+                                        <div class="heading_main" style="text-align:left;">
+                                            <div class="fs_47 ln_40">How Many Trees</div>
+                                            <div class="fs_39 ln_40">WOULD YOU LIKE</div>
+                                            <div class="fs_39 ln_40">TO SPONSOR?</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_picture pt48 pb24 o_colored_level" data-name="Picture">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-4"/>
+                                    <div class="col-lg-4">
+                                        <div class="vertical-center1">
+                                            <div class="type_box">type 2</div>
+                                        </div>
+                                        <div class="number-wrapper pt64">
+                                            <input type="number" class="number_quantity" value="10" id="number"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 o_colored_level"><img class="img-fluid o_we_custom_image"
+                                                                               src="shop/static/src/images/trees.png"
+                                                                               loading="lazy" alt=""
+                                                                               data-original-id="692"
+                                                                               data-original-src="shop/static/src/images/trees.png"
+                                                                               data-mimetype="image/png"
+                                                                               data-resize-width="341"/>&amp;nbsp;
+                                    </div>
+                                </div>
+                                <div class="row s_nb_column_fixed pt64">
+                                    <div class="col-lg-4"/>
+                                    <div class="col-lg-4">
+                                        <div class="vertical-center1">
+                                            <div class="type_box">type 3</div>
+                                        </div>
+                                        <div class="number-wrapper pt64">
+                                            <input type="number" class="number_quantity" value="5" id="number"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 o_colored_level"><img class="img-fluid o_we_custom_image"
+                                                                               src="shop/static/src/images/trees5.png"
+                                                                               loading="lazy" data-original-title=""
+                                                                               title="" aria-describedby="tooltip848116"
+                                                                               alt="" data-original-id="693"
+                                                                               data-original-src="shop/static/src/images/trees5.png"
+                                                                               data-mimetype="image/png"
+                                                                               data-resize-width="341"/>&amp;nbsp;
+                                    </div>
+                                </div>
+                                <div class="row s_btn pt96 pb16" data-name="Button">
+                                    <div class="col-lg-6">
+                                        <a href="/cart" class="btn btn-primary-rounded" data-original-title="" title=""
+                                           aria-describedby="tooltip791089">GO TO SHOP BAG
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <a href="#" class="btn btn-primary-rounded" data-original-title="" title=""
+                                           aria-describedby="tooltip791089">continue buying!
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+
+        </template>
+<!--    </data>-->
+</odoo>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="menu_old_member_tree_form" model="website.menu">
+            <field name="name">OLD MEMBER</field>
+            <field name="url">/old-member</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+        <template id="old_membership" name="old members">
+            <t t-name="website.old-member">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_text_block" data-name="Text block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 pt32 align-items-center">
+                                        <div class="pt32 pb64">
+                                            <div class="white_box"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_three_columns pt32 pb32 o_colored_level" data-name="Columns">
+                            <div class="container">
+                                <div class="row d-flex align-items-stretch">
+                                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                                        <div class="card">
+<!--                                            <img class="card-img-top" t-att-src="user_id.image_1920" alt=""-->
+<!--                                                 data-original-title="" title="" aria-describedby="tooltip517601"-->
+<!--                                                 loading="lazy" data-original-id="663"-->
+<!--                                                 data-mimetype="image/png" data-resize-width="198"/>-->
+
+                                            <span t-field="user_id.image_1920"
+                                                    t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                                                    class="card-img-top"/>
+<!--                                                    class="d-flex h-100 justify-content-center align-items-center"/>-->
+                                            <div class="card-body">
+<!--                                                <h3 class="card-title profile_head">JOHN SMITH</h3>-->
+                                                <h3 class="card-title profile_head"><div t-field="user_id.partner_id"/></h3>
+                                                <p class="pt16 profile_post">forest guardian</p>
+                                                <div class="s_btn pb0 pt64 text-left" data-name="Button">
+                                                    <img src="/shop/static/src/images/settings_icon.png"
+                                                         class="settings_icon" data-original-title="" title=""
+                                                         aria-describedby="tooltip878154" loading="lazy" alt=""
+                                                         data-original-id="677"
+                                                         data-original-src="/shop/static/src/images/settings_icon.png"
+                                                         data-mimetype="image/png" data-resize-width="68"/>
+                                                    <a href="/my/account" class="btn settings_btn">SETTINGS</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1"/>
+                                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="s_btn pb0 pt72 text-left" data-name="Button">
+                                                    <img src="/shop/static/src/images/tree_icon.png" class="tree_icon"
+                                                         data-original-title="" title=""
+                                                         aria-describedby="tooltip878154" loading="lazy"/>
+<!--                                                    <a href="#" class="btn tree_icon_btn">MY TREES</a>-->
+                                                    <a t-attf-href="/my/trees?{{ keep_query() }}" class="btn tree_icon_btn">MY TREES</a>
+                                                </div>
+                                                <div class="s_btn pb0 pt72 text-left" data-name="Button">
+                                                    <img src="/shop/static/src/images/tree_icon.png" class="tree_icon"
+                                                         data-original-title="" title=""
+                                                         aria-describedby="tooltip878154" loading="lazy"/>
+                                                    <a href="#" class="btn tree_icon_btn">MY SUBSCRIPTION</a>
+                                                </div>
+                                                <div class="pt64">
+                                                    <div class="row green_box mr32">
+                                                        <div class="col-lg-7" style="padding-right:0px !important;">
+                                                            <div class="fs_12_ye">Id tree: 8483807578</div>
+                                                            <div class="fs_15 ln_12">ACACIA
+                                                                <br/>
+                                                                <span class="fs_10">Born: malawi, Africa
+                                                                </span>
+                                                            </div>
+                                                            <div class="fs_10 ln_12 pt8">
+                                                                <span clss="fs_6">Size: 20-30 MT</span>
+                                                                <br/>
+                                                                xxx co2
+                                                                <br/>
+                                                                characteristics
+                                                            </div>
+                                                            <div class="fs_17 ln_12 pt16">JOHN SMITH
+                                                                <br/>
+                                                                <span class="fs_10">FOREST GUARDIAN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-5 o_colored_level"
+                                                             style="padding:0px !important;"><img
+                                                                class="o_we_custom_image"
+                                                                src="/shop/static/src/images/green_img.png"
+                                                                data-original-title="" title=""
+                                                                aria-describedby="tooltip358345" loading="lazy" alt=""
+                                                                data-original-id="675"
+                                                                data-original-src="/shop/static/src/images/green_img.png"
+                                                                data-mimetype="image/png" data-resize-width="118"/>&amp;nbsp;
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                                        <div class="card">
+                                            <div class="s_btn text-left pt72 pb16" data-name="Button">
+<!--                                                <div class="planttree_btn">Plant-->
+<!--                                                    <br/>-->
+<!--                                                    a Tree-->
+<!--                                                </div>-->
+                                                <a href="/plant-a-tree" class="btn tree_icon_btn">PLANT A TREE</a>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="s_share pt144" data-name="Share">
+                                                    <h4 class="s_share_title share_inside">Share your profile<br/>with
+                                                        your comunity!
+                                                    </h4>
+                                                    <div class="share_center pt16">
+                                                        <a href="#" target="_blank" class="s_share_facebook ">
+                                                            <img class="img-fluid o_we_custom_image"
+                                                                 src="/shop/static/src/images/insta_inside.png"
+                                                                 data-original-title="" title=""
+                                                                 aria-describedby="tooltip413719" loading="lazy" alt=""
+                                                                 data-original-id="679"
+                                                                 data-original-src="/shop/static/src/images/insta_inside.png"
+                                                                 data-mimetype="image/png" data-resize-width="29"/>
+                                                            &amp;nbsp;
+                                                        </a>
+                                                        <a href="#" target="_blank" class="s_share_facebook ">
+                                                            <img class="img-fluid o_we_custom_image"
+                                                                 src="/shop/static/src/images/fb_inside.png" loading="lazy"
+                                                                 data-original-title="" title=""
+                                                                 aria-describedby="tooltip559313" alt=""
+                                                                 data-original-id="676"
+                                                                 data-original-src="/shop/static/src/images/fb_inside.png"
+                                                                 data-mimetype="image/png" data-resize-width="29"/>
+                                                        </a> &amp;nbsp;
+                                                        <a href="https://twitter.com/intent/tweet?text=%20old-member%20%7C%20My%20Website%20&amp;url=http%3A%2F%2F172.104.253.15%3A8069%2Fold-member%23advanced-view-editor%3Fres%3D1112"
+                                                           target="_blank" class="s_share_twitter ">
+                                                            <img class="img-fluid o_we_custom_image"
+                                                                 src="/shop/static/src/images/twitter_inside.png"
+                                                                 loading="lazy" data-original-title="" title=""
+                                                                 aria-describedby="tooltip172935" alt=""
+                                                                 data-original-id="678"
+                                                                 data-original-src="/shop/static/src/images/twitter_inside.png"
+                                                                 data-mimetype="image/png" data-resize-width="29"/>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+
+
+        </template>
+
+</odoo>

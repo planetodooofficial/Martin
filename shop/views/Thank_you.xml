@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--        <record id="menu_shop_thankyou" model="website.menu">-->
+<!--            <field name="name">Shop Thank</field>-->
+<!--            <field name="url">/shopping-thankyou</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+
+
+        <template id="shop_thank" name="shopping thank you">
+            <t t-name="website.shopping-thankyou">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure oe_empty">
+                        <section class="s_text_block thank_bg" data-name="Text block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-9 pt32">
+                                        <div class="green_headn">
+                                            <div class="fs_39 ln_40 ls_2">Congratulations,
+                                                <br/>
+                                                you are now a tree
+
+                                                <br/>
+                                                planting sponsor!
+                                            </div>
+                                        </div>
+
+                                        <div class="white_head fs_39 ln_40 ls_2 pt112">
+                                            You want to gift
+                                            <br/>
+                                            your tree to someone?
+
+                                        </div>
+
+
+                                        <div class="s_btn text-left pt24 pb16" data-name="Button">
+                                            <a href="/gift-a-tree" class="btn btn-primary-small o_default_snippet_text">Yes</a>
+                                            <a href="#" class="btn btn-primary-small o_default_snippet_text">No</a>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-lg-3 pt32"/>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+</odoo>

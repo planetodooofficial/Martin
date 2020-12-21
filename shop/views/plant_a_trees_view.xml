@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="planttree_form" model="website.menu">
+            <field name="name">PLANT A TREE</field>
+            <field name="url">/plant-a-tree1</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+
+
+        <template id="pllant" name="Plant Tree">
+            <t t-name="website.plant-a-tree1">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_picture pt48 pb24" data-name="Picture">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-12 s_title pt16 pb16" data-name="Title">
+                                        <div class="heading_main1" style="text-align: center;">
+                                            <div class="fs_55 ls_2 ln_55">Which</div>
+                                            <div class="fs_58 ls_2 ln_55">kind of tree</div>
+                                            <div class="fs_42 ls_2 ln_55">would you like to plant?</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section
+                                class="o_gallery s_image_gallery o_fake_not_editable o_slideshow o_spc-medium o_colored_level"
+                                data-columns="3" style="overflow: hidden; height: 680px;" data-name="Image Gallery">
+                            <div class="container">
+                                <div class="wine-slider">
+                                    <div class="slide-container" style="transform: translateX(-242px); width: 1936px;">
+                                        <a class="slide slide-0" href="#" data-slide="0">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy" data-original-id="661"
+                                                 data-original-src="/shop/static/src/images/type3 (1).png"
+                                                 data-mimetype="image/png"/>
+                                            <br/>
+                                            <div class="product_type">type 1</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-1 active" href="#" data-slide="1">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 1</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-2" href="#" data-slide="2">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 2</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-3" href="#" data-slide="3">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 3</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-4" href="#" data-slide="4">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 4</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-5" href="#" data-slide="5">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 5</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-6" href="#" data-slide="6">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 6</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                        <a class="slide slide-7" href="#" data-slide="7">
+                                            <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/type3 (1).png"
+                                                 loading="lazy"/>
+                                            <div class="product_type">type 7</div>
+                                            <div class="name">co2 Calculator</div>
+                                        </a>
+                                    </div>
+                                    <div class="arrow previous">
+                                        <span class="fa fa-chevron-left"/>
+                                    </div>
+                                    <div class="arrow next">
+                                        <span class="fa fa-chevron-right"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>
+                        <script src="http://173.249.51.119:8936/survey_api/static/src/img/carousel.js"/>
+                    </div>
+                </t>
+            </t>
+
+
+        </template>
+    </data>
+</odoo>

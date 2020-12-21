@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <data>-->
+<!--        <record id="menu_register_member_tree_form" model="website.menu">-->
+<!--            <field name="name">REGISTER DETAIL</field>-->
+<!--            <field name="url">/register-detail</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+        <template id="register_info_detail" name="Register Detail">
+            <t t-name="website.register-detail">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_text_block" data-name="Text block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 pt32 align-items-center">
+                                        <div class="pt32 pb88">
+                                            <div class="white_box"/>
+                                        </div>
+                                        <div class="heading_main">JOIN 180. EARTH</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_text_block o_colored_level" data-name="Text block">
+                            <div class="container">
+                                <form action="" style="display:inherit;">
+                                    <div class="row pt80">
+                                        <div class="col-lg-3"/>
+                                        <div class="col-lg-2 pr80">
+                                            <input type="radio" id="female" name="radio-group"/>
+                                            <label for="test1">Female</label>
+                                        </div>
+                                        <div class="col-lg-2 pr80">
+                                            <input type="radio" id="male" name="radio-group"/>
+                                            <label for="test1">Male</label>
+                                        </div>
+                                        <div class="col-lg-2 pr80">
+                                            <input type="radio" id="other" name="radio-group"/>
+                                            <label for="test1">Other</label>
+                                        </div>
+                                        <div class="col-lg-3"/>
+                                        <div class="col-lg-12 pt128 align-items-center pb16">
+                                            <div class="heading_tom pb64">Date of birth</div>
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <select class="listbox_s">
+                                                        <option value=""/>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <select class="listbox_s">
+                                                        <option value=""/>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <select class="listbox_s">
+                                                        <option value=""/>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 pt56 align-items-center pb16 o_colored_level">
+                                            <div class="pt32"><img class="img-fluid o_we_custom_image d-block mx-auto"
+                                                                   src="/shop/static/src/images/location.png"
+                                                                   data-original-title="" title=""
+                                                                   aria-describedby="tooltip490194" loading="lazy"
+                                                                   alt="" data-original-id="689"
+                                                                   data-original-src="/shop/static/src/images/location.png"
+                                                                   data-mimetype="image/png" data-resize-width="34"/>&amp;nbsp;
+                                            </div>
+                                            <div class="heading_tom pb64">Where are you from?</div>
+                                            <div class="row">
+                                                <div class="col-lg-1"/>
+                                                <div class="col-lg-5">
+                                                    <select class="listbox_m">
+                                                        <option value="1">COUNTRY</option>
+                                                        <option value="2">Option 2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <select class="listbox_m">
+                                                        <option value="1">CITY</option>
+                                                        <option value="2">Option 2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-1"/>
+                                            </div>
+                                            <div class="row pt80">
+                                                <div class="col-lg-1"/>
+                                                <div class="col-lg-5">
+                                                    <input type="text" id="cellnumber" name="cellnumber"
+                                                           class="form_control1" placeholder="CELLPHONE NUMBER"/>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    <input type="text" id="email" name="email" class="form_control1"
+                                                           placeholder="e-mail"/>
+                                                </div>
+                                                <div class="col-lg-1"/>
+                                            </div>
+                                            <div class="btn_container s_btn pt96 pb16" data-name="Button">
+                                                <div class="vertical-center">
+                                                    <a href="#" class="btn btn_fb btn_min_width" data-original-title=""
+                                                       title="" aria-describedby="tooltip791089">Save
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+
+
+        </template>
+
+<!--    </data>-->
+</odoo>

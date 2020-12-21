@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_gift-tree" model="website.menu">
+            <field name="name">Gift A Tree</field>
+            <field name="url">/gift-a-tree</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+
+        <template id="gift_tree" name="Gift A Tree">
+            <t t-name="website.gift-a-tree">
+                <t t-call="website.layout">
+<!--                    <div id="wrap" class="oe_structure">-->
+<!--                        <section class="s_picture pt48 pb24" data-name="Picture">-->
+<!--                            <div class="container">-->
+<!--                                <div class="row s_nb_column_fixed">-->
+<!--                                    <div class="col-lg-12 s_title pt16 pb16" data-name="Title">-->
+<!--                                        <div class="heading_main2">-->
+<!--                                            <div class="fs_75 ls_8 ln_80">PICK A CARD-->
+<!--                                                <br/>-->
+<!--                                                TEMPLATE!-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </section>-->
+
+<!--&lt;!&ndash;                        <form action="gift-data" class="pt64" method="POST" enctype="multipart/form-data">&ndash;&gt;-->
+<!--                        <form class="pt64" method="POST" enctype="multipart/form-data">-->
+<!--                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+
+<!--&lt;!&ndash;                            <section&ndash;&gt;-->
+<!--&lt;!&ndash;                                    class="o_gallery pt32 pb32 s_image_gallery o_fake_not_editable o_slideshow o_spc-medium"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    style="overflow: hidden; height: 240px;" data-columns="3" data-name="Image Gallery">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <div class="container" id="contain">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="wine-slider1">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="slide-container"&ndash;&gt;-->
+<!--&lt;!&ndash;                                             style="transform: translateX(-242px); width: 726px;">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <t t-foreach="templates" t-as="line">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <a class="slide slide-2" href="#" data-slide="2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <div class="greenbox1">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <span t-esc="line.name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <span t-esc="line.id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <input type="text" name="temp_id" id="temp_id" t-att-value="line.id"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                </a>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            </t>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </section>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <script src="http://173.249.51.119:8936/survey_api/static/src/img/carousel.js"/>&ndash;&gt;-->
+
+
+
+
+
+
+
+<!--                            <section-->
+<!--                                    class="o_gallery pt32 pb32 s_image_gallery o_fake_not_editable o_slideshow o_spc-medium"-->
+<!--                                    style="overflow: hidden; height: 240px;" data-columns="5" data-name="Image Gallery">-->
+<!--                                <div class="container">-->
+
+<!--                                    <div class="wine-slider1">-->
+
+<!--                                        <div class="slide-container" style="transform: translateX(-242px); width: 726px;">-->
+                                            <t t-foreach="templates" t-as="line">
+                                               <a t-attf-class="'slide slide-'+str(line.id)" href="#" t-att-data-slide="line.id">
+                                                    <div class="greenbox1">
+                                                        <span t-esc="line.name"/>
+                                                        <span t-esc="line.id"/>
+                                                        <input type="text" name="temp_id" id="temp_id" t-att-value="line.id"/>
+                                                    </div>
+                                                </a>
+
+                                                 <t t-foreach="templates" t-as="line">
+                                        <a t-attf-class="slide slide-{{ line.id }}" href="#" t-att-data-slide="line.id">
+                                            <div class="greenbox1"><span t-esc="line.id"/></div>
+                                        </a>
+                                        </t>
+
+                                            </t>
+
+                    <t t-foreach="[1, 2, 3]" t-as="item">
+    <li t-attf-class="row {{ (item_index % 2 === 0) ? 'even' : 'odd' }}">
+        <t t-esc="item"/>
+    </li>
+</t>
+<!--                                        </div>-->
+
+<!--                                        <div class="arrow previous">-->
+<!--                                            <span class="fa fa-chevron-left"/>-->
+<!--                                        </div>-->
+<!--                                        <div class="arrow next">-->
+<!--                                            <span class="fa fa-chevron-right"/>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+
+<!--                                </div>-->
+
+
+<!--                            </section>-->
+<!--                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>-->
+<!--&lt;!&ndash;                            <script src="http://173.249.51.119:8936/survey_api/static/src/img/carousel.js"/>&ndash;&gt;-->
+
+
+
+
+
+
+
+
+
+<!--                            <section class="s_text_block pt32 pb32" data-name="Text block">-->
+<!--                                <div class="container">-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-lg-12 pt32 pb32">-->
+<!--                                            <div class="green_headn ls_2 fs_39">complete info!</div>-->
+
+<!--                                            &lt;!&ndash;                                        <form action="gift-data" class="pt64" method="POST" enctype="multipart/form-data">&ndash;&gt;-->
+<!--                                            &lt;!&ndash;                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>&ndash;&gt;-->
+<!--                                            <label for="dear_name" class="green_headn ls_2 fs_20 pr-5">dear:</label>-->
+<!--                                            <textarea name="dear_name" id="dear_name" rows="3" cols="50"-->
+<!--                                                      class="txtarea"/>-->
+<!--                                            <br/>-->
+<!--                                            <div class="pt32"/>-->
+<!--                                            <label for="mail_msg" class="green_headn ls_2 fs_20 pr-5">message:</label>-->
+<!--                                            <textarea name="mail_msg" id="mail_msg" rows="5" cols="50" class="txtarea"/>-->
+
+<!--                                            <br/>-->
+<!--                                            <div class="pt32"/>-->
+<!--                                            <label for="email" class="green_headn ls_2 fs_20 pr-5">email:</label>-->
+<!--                                            <input type="text" id="email" name="email" rows="3" cols="50" class="txtarea"-->
+<!--                                                       placeholder="enter your email id"/>-->
+
+<!--                                            <br/>-->
+<!--                                            <br/>-->
+<!--                                            <br/>-->
+<!--                                            <div align="center">-->
+
+<!--                                                <button class="btn btn_fb btn_min_width" type="submit" onclick="carousel_id(this)">Ready</button>-->
+
+<!--                                            </div>-->
+
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </section>-->
+<!--                        </form>-->
+<!--                    </div>-->
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

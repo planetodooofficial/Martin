@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_old_member_tree_form" model="website.menu">
+            <field name="name">LOGIN</field>
+            <field name="url">/login-1</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+        <template id="login_info" name="login information">
+            <t t-name="website.login-1">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_text_block o_colored_level" data-name="Text block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 pt72 align-items-center o_colored_level">
+                                        <div class="pt32 pb64">
+                                            <div class="normal_head1 ls_2">HELLO :)</div>
+                                            <div class="normal_head1 fs_40 ls_2">Welcome forest guardian!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_text_image pt32 o_colored_level" data-name="Image - Text">
+                            <div class="container">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 o_colored_level">
+                                        <img src="/shop/static/src/images/login1.png" class="img mx-auto"
+                                             style="position: absolute;top: -200px;left: -70px;" alt=""
+                                             data-original-title="" title="" aria-describedby="tooltip127147"
+                                             loading="lazy" data-original-id="696"
+                                             data-original-src="/shop/static/src/images/login1.png"
+                                             data-mimetype="image/png" data-resize-width="400"/>
+                                    </div>
+                                    <div class="col-lg-4 btn_pos">
+                                        <div class="s_btn text-left pb16" data-name="Button">
+                                            <a href="/web/login" class="btn btn-primary-login1" data-original-title=""
+                                               title="" aria-describedby="tooltip875432">Login
+                                            </a>
+                                            <div style="position: relative;top: 80px;">
+                                                <a href="/web/signup"
+                                                   class="btn btn-primary-sponsor o_default_snippet_text">JOIN US AS A
+                                                    NEW
+                                                    <br/>
+                                                    TREE SPONSOR
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 pt248 o_colored_level">
+                                        <img src="/shop/static/src/images/login_2.png" class="img mx-auto" alt=""
+                                             data-original-title="" title="" aria-describedby="tooltip127147"
+                                             loading="lazy" data-original-id="698"
+                                             data-original-src="/shop/static/src/images/login_2.png"
+                                             data-mimetype="image/png" data-resize-width="441"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+
+
+        </template>
+
+    </data>
+</odoo>

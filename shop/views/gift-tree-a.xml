@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_gift-tree" model="website.menu">
+            <field name="name">Gift A Tree</field>
+            <field name="url">/gift-a-tree</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
+
+        <template id="gift_tree" name="Gift A Tree">
+            <t t-name="website.gift_a_tree">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_picture pt48 pb24" data-name="Picture">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed">
+                                    <div class="col-lg-12 s_title pt16 pb16" data-name="Title">
+                                        <div class="heading_main2">
+                                            <div class="fs_75 ls_8 ln_80">PICK A CARD
+                                                <br/>
+                                                TEMPLATE!
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+<!--                        <section-->
+<!--                                class="o_gallery pt32 pb32 s_image_gallery o_fake_not_editable o_slideshow o_spc-medium"-->
+<!--                                style="overflow: hidden; height: 240px;" data-columns="3" data-name="Image Gallery">-->
+<!--                            <div class="container">-->
+<!--                                <div class="wine-slider1">-->
+<!--                                    <div class="slide-container" style="transform: translateX(-242px); width: 726px;">-->
+<!--                                        <a class="slide slide-0" href="#" data-slide="0">-->
+<!--                                            <div class="greenbox1">Card 2</div>-->
+<!--                                        </a>-->
+<!--                                        <a class="slide slide-1 active" href="#" data-slide="1">-->
+<!--                                            <div class="greenbox1">Card 1</div>-->
+<!--                                        </a>-->
+<!--                                        <a class="slide slide-2" href="#" data-slide="2">-->
+<!--                                            <div class="greenbox1">Card 3</div>-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <div class="arrow previous">-->
+<!--                                        <span class="fa fa-chevron-left"/>-->
+<!--                                    </div>-->
+<!--                                    <div class="arrow next">-->
+<!--                                        <span class="fa fa-chevron-right"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </section>-->
+
+
+
+
+
+
+
+                                                <section
+                                class="o_gallery pt32 pb32 s_image_gallery o_fake_not_editable o_slideshow o_spc-medium"
+                                style="overflow: hidden; height: 240px;" data-columns="3" data-name="Image Gallery">
+                            <div class="container">
+                                <div class="wine-slider1">
+                                    <div class="slide-container" style="transform: translateX(-242px); width: 726px;">
+
+                                        <t t-set="i" t-value="0"/>
+                                        <t t-foreach="templates" t-as="line">
+
+
+                                        <a t-attf-class="slide slide-{{ i }}" href="#" t-att-data-slide="i" t-att-data-id="line.id">
+                                            <div class="greenbox1">
+                                                <span t-esc="line.name"/>
+                                                <span t-field="line.template_img"
+                                                    t-options="{'widget': 'image', 'preview_image': 'template_img'}"
+                                                    class="card-img-top"/>
+                                                <span t-esc="line.id"/>
+                                            </div>
+                                        </a>
+                                            <t t-set="i" t-value="i+1"/>
+
+                                        </t>
+                                    </div>
+                                    <div class="arrow previous">
+                                        <span class="fa fa-chevron-left"/>
+                                    </div>
+                                    <div class="arrow next">
+                                        <span class="fa fa-chevron-right"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+
+
+
+
+<!--                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"/>-->
+<!--                        <script src="http://173.249.51.119:8936/survey_api/static/src/img/carousel.js"/>-->
+                        <script src="/shop/static/src/js/carousel.js"/>
+
+                        <section class="s_text_block pt32 pb32" data-name="Text block">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 pt32 pb32">
+                                        <div class="green_headn ls_2 fs_39">complete info!</div>
+
+
+
+                                        <form action="gift-data" class="pt64" method="POST" enctype="multipart/form-data">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                            <input type="text"  id="active-slider" name="active-slider"/>
+                                            <input type="text"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
+
+                                            <label for="dear" class="green_headn ls_2 fs_20 pr-5">dear:</label>
+                                            <textarea name="dear_name" id="dear_name" rows="3" cols="50"
+                                                      class="txtarea"/>
+                                            <br/>
+                                            <div class="pt32"/>
+                                            <label for="message" class="green_headn ls_2 fs_20 pr-5">message:</label>
+                                            <textarea name="mail_msg" id="mail_msg" rows="5" cols="50" class="txtarea"/>
+                                            <br/>
+
+                                            <div class="pt32"/>
+                                            <label for="email" class="green_headn ls_2 fs_20 pr-5">email:</label>
+                                            <input type="text" id="email" name="email" rows="3" cols="50" class="txtarea"
+                                                       placeholder="enter your email id"/>
+
+                                            <br/>
+                                            <br/>
+                                            <div align="center">
+
+                                                <button class="btn btn_fb btn_min_width" type="submit">Ready</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

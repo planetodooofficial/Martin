@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="homep" name="Home" inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="replace">
+            <t name="Homepage" t-name="website.homepage1">
+                <t t-call="website.layout">
+                    <t t-set="pageName" t-value="'homepage'"/>
+                    <div id="myCarousel1601533248552" class="s_carousel carousel slide s_carousel_default"
+                         data-interval="10000" data-name="Carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel1601533248552" data-slide-to="0"/>
+                            <li data-target="#myCarousel1601533248552" data-slide-to="1" class="active"/>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item oe_custom_bg pb152 pt64 o_colored_level" data-name="Slide"
+                                 style="">
+                                <div class="container">
+                                    <div class="row content">
+                                        <div class="col-lg-4 pt144"><img class="img-fluid o_we_custom_image"
+                                                                         src="shop/static/src/images/LOGO1.png"
+                                                                         data-original-title="" title=""
+                                                                         aria-describedby="tooltip47114"
+                                                                         loading="lazy" alt=""
+                                                                         data-original-id="700"
+                                                                         data-original-src="shop/static/src/images/LOGO1.png"
+                                                                         data-mimetype="image/png"
+                                                                         data-resize-width="334"/>&amp;nbsp;
+                                        </div>
+                                        <div class="col-lg-4 pt144 main_head">One Planet,<br/>One Mission,
+                                            <br/>
+                                            <div class="main_head_white">One Click!</div>
+                                        </div>
+                                        <div class="col-lg-4">&amp;nbsp;
+                                            <img class="img-fluid o_we_custom_image"
+                                                 src="shop/static/src/images/header_giraffe.png" loading="lazy"
+                                                 alt="" data-original-id="701"
+                                                 data-original-src="shop/static/src/images/header_giraffe.png"
+                                                 data-mimetype="image/png" data-resize-width="472"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item oe_custom_bg pt96 pb96 o_colored_level active"
+                                 data-name="Slide" style="">
+                                <div class="container">
+                                    <div class="row content">
+                                        <div class="col-lg-4 pt144"><img class="img-fluid o_we_custom_image"
+                                                                         src="shop/static/src/images/LOGO1.png"
+                                                                         data-original-title="" title=""
+                                                                         aria-describedby="tooltip47114"
+                                                                         loading="lazy" alt=""
+                                                                         data-original-id="700"
+                                                                         data-original-src="shop/static/src/images/LOGO1.png"
+                                                                         data-mimetype="image/png"
+                                                                         data-resize-width="334"/>&amp;nbsp;
+                                        </div>
+                                        <div class="col-lg-4 pt144 main_head">One Planet,<br/>One Mission,
+                                            <br/>
+                                            <div class="main_head_white">One Click!</div>
+                                        </div>
+                                        <div class="col-lg-4">&amp;nbsp;
+                                            <img class="img-fluid o_we_custom_image"
+                                                 src="shop/static/src/images/header_giraffe.png" loading="lazy"
+                                                 alt="" data-original-id="701"
+                                                 data-original-src="shop/static/src/images/header_giraffe.png"
+                                                 data-mimetype="image/png" data-resize-width="472"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-control-prev" data-target="#myCarousel1601533248552" data-slide="prev"
+                             role="img" aria-label="Previous" title="Previous">
+                            <span class="carousel-control-prev-icon"/>
+                            <span class="sr-only o_default_snippet_text">Previous</span>
+                        </div>
+                        <div class="carousel-control-next" data-target="#myCarousel1601533248552" data-slide="next"
+                             role="img" aria-label="Next" title="Next">
+                            <span class="carousel-control-next-icon"/>
+                            <span class="sr-only o_default_snippet_text">Next</span>
+                        </div>
+                    </div>
+                    <section class="s_text_image pt32 pb351 o_colored_level" data-name="Image - Text">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                    <img src="shop/static/src/images/plantatree_img.png"
+                                         class="img img-fluid mx-auto" alt="" data-original-title="" title=""
+                                         aria-describedby="tooltip231311" loading="lazy" data-original-id="706"
+                                         data-original-src="shop/static/src/images/plantatree_img.png"
+                                         data-mimetype="image/png" data-resize-width="452"/>
+                                </div>
+                                <div class="col-lg-6 pt16 pb16">
+                                    <div class="green_txtbox">Plant a Tree</div>
+                                    <div class="main_head1 pt48">Become a<br/>Forest<br/>Guardian!
+                                    </div>
+                                    <div class="main_head1 fs_20 ln_35 pt48">Your Tree will grow
+                                        <br/>
+                                        <span class="fs_23 green_border">in Africa!</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="s_text_image pt32 pb32 o_colored_level" data-name="Image - Text">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 pt16 pb16 o_colored_level">
+                                    <img src="shop/static/src/images/martijin.png" class="img img-fluid mx-auto"
+                                         alt="" data-original-title="" title="" aria-describedby="tooltip141040"
+                                         loading="lazy" data-original-id="707"
+                                         data-original-src="shop/static/src/images/martijin.png"
+                                         data-mimetype="image/png" data-resize-width="690"/>
+                                </div>
+                                <div class="col-lg-6 pt16 pb16 pl-30">
+                                    <div class="speech-bubble">
+                                        <b>
+                                            <i>
+                                                "
+                                            </i>
+                                            I' m just a guy
+                                            <br/>
+                                        </b>
+                                        <div class="fs_30">
+                                            <b>who wants to plant trees.
+                                                <i>"</i>
+                                            </b>
+                                        </div>
+                                    </div>
+                                    <div class="pl-30">
+                                        <div class="normal_head pt48">Heal our Planet</div>
+                                        <div class="normal_txt pt16">It takes time, persistence, care and love to
+                                            heal our planet. In cooperation. Each farmer is part of a family. Each
+                                            family is part of a village. Each village is part of a country. All are
+                                            inhabitants of our beautiful planet. By supporting individual farmers to
+                                            plan and nourish trees we heal our one &amp;amp; only planet. Both
+                                            sponsors and farmers directly support themselves.
+                                        </div>
+                                        <div class="normal_head fs_20  pt16">So, how do we solve this on the global
+                                            scale?
+                                        </div>
+                                        <div class="normal_txt pt16">We have already tackled the technical and
+                                            logistical challenges so that you can become an immediate player in this
+                                            solution.
+                                        </div>
+                                        <div class="normal_head fs_17 pt16 pb32">It begins with just
+                                            <span class="white_border">one click.</span>
+                                        </div>
+                                        <div class="white_box1"/>
+                                        <div class="normal_head pt16">About Martijn Hekman</div>
+                                        <div class="normal_txt pt16">He has 20-years experience in International
+                                            humanitarian emergency management, spanning 20 countries. Working with
+                                            U.N. charities, Fortune 500 companies, and startups, he oversaw the
+                                            successful implementation of 50+ complex international aid projects,
+                                            worth more than $1 billion USD. Martijn has founded and invested in
+                                            several successful enterprises.
+                                            <br/>He holds an Agribusiness - Agri value chain Degree and managed
+                                            dozens of agricultural and tree planting focused projects in Asia,
+                                            Africa and the Middle East.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="s_text_block pt200 pb32 footer_giraffe_bg" data-name="Text block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 pt32 pb32">
+                                    <div class="normal_head fs_51 ls_2" style="text-align: center; ">Let's regreen
+                                        our planet!
+                                    </div>
+                                    <div class="s_btn pt96 pb16" data-name="Button" style="text-align: center;">
+                                        <a href="#" class="btn btn-primary-theme-white" data-original-title=""
+                                           title="" aria-describedby="tooltip791089">Plant a Tree
+                                        </a>
+                                        <a href="#" class="btn btn-primary-theme-white" data-original-title=""
+                                           title="" aria-describedby="tooltip791089">Log in
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </t>
+            </t>
+        </xpath>
+
+    </template>
+</odoo>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <data>-->
+<!--        <record id="menu_no_of_trees" model="website.menu">-->
+<!--            <field name="name">MY TREES</field>-->
+<!--            <field name="url">/my-tress</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+
+        <template id="trees_select" name="Select trees">
+            <t t-name="website.my-tress">
+                <t t-call="website.layout">
+                    <div id="wrap" class="oe_structure">
+                        <section class="s_three_columns pt32 pb32 o_colored_level" data-name="Columns">
+                            <div class="container">
+                                <div class="row d-flex align-items-stretch">
+                                    <div class="col-lg-8 s_col_no_bgcolor pt16 pb16">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="s_btn pb0 pt176 pb104 text-left" data-name="Button">
+                                                    <img src="shop/static/src/images/tree_icon.png" class="tree_icon"
+                                                         data-original-title="" title=""
+                                                         aria-describedby="tooltip878154" loading="lazy" alt=""
+                                                         data-original-id="661"
+                                                         data-original-src="shop/static/src/images/tree_icon.png"
+                                                         data-mimetype="image/png" data-resize-width="54"/>
+                                                    <div class="btn tree_icon_btn">MY TREES</div>
+                                                </div>
+                                                <div class="map_bg1">
+                                                    <div class="row">
+                                                        <div class="col-lg-1"/>
+                                                        <div class="col-lg-3">
+                                                            <div class="pointer_bg">AMAZONAS
+                                                                <br/>
+                                                                <div class="pointer_txt">10</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3">
+                                                            <div class="pointer_bg1">AMAZONAS
+                                                                <br/>
+                                                                <div class="pointer_txt">5</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                                        <div class="card">
+                                            <img class="card-img-top" src="shop/static/src/images/nigga.png" alt=""
+                                                 data-original-title="" title="" aria-describedby="tooltip517601"
+                                                 loading="lazy" data-original-id="663"
+                                                 data-original-src="shop/static/src/images/nigga.png"
+                                                 data-mimetype="image/png" data-resize-width="198"/>
+                                            <div class="card-body">
+                                                <h3 class="card-title profile_head">JOHN SMITH</h3>
+                                                <p class="pt16 profile_post">forest guardian</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_three_columns pt32 o_colored_level" data-name="Columns">
+                            <div class="container">
+                                <div class="row d-flex align-items-stretch">
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-8">
+                                        <div class="card">
+                                            <div class="s_btn pb0 text-left" data-name="Button">
+                                                <img src="shop/static/src/images/tree_icon.png" class="tree_icon"
+                                                     data-original-title="" title="" aria-describedby="tooltip878154"
+                                                     loading="lazy"/>
+                                                <div class="btn tree_icon_btn">AMAZONAS - ACACIA JS658490</div>
+                                            </div>
+                                            <div class="card-body photo_detail ">
+                                                <div class="row d-flex align-items-stretch">
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 data-original-title="" title=""
+                                                                 aria-describedby="tooltip351981" loading="lazy"
+                                                                 data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 loading="lazy" data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="fs_20 ls_2">15th august 2020</div>
+                                                <p class="card-text o_default_snippet_text fs_15 ls_2">Photo took by
+                                                    Adam, local farmer
+                                                </p>
+                                            </div>
+                                            <div class="card-body photo_detail ">
+                                                <div class="row d-flex align-items-stretch">
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 data-original-title="" title=""
+                                                                 aria-describedby="tooltip351981" loading="lazy"
+                                                                 data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 loading="lazy" data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="fs_20 ls_2">15th august 2020</div>
+                                                <p class="card-text o_default_snippet_text fs_15 ls_2">Photo took by
+                                                    Adam, local farmer
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1"/>
+                                    <div class="col-lg-3 pt16 pb16 o_colored_level">
+                                        <div class="tree_detail">
+                                            <div class="white_txtbox">
+                                                Now in Amazonas
+                                            </div>
+                                            <div class="pt16 fs_15">2nd september 2020</div>
+                                            <div class="fs_20">15:00
+                                                <span class="time">hs</span>
+                                                <br/>
+                                                <br/>
+                                                <img class="img-fluid o_we_custom_image"
+                                                     src="shop/static/src/images/temperature.png" loading="lazy" alt=""
+                                                     data-original-id="665"
+                                                     data-original-src="shop/static/src/images/temperature.png"
+                                                     data-mimetype="image/png" data-resize-width="99"/>
+                                                <span class="fs_44">&amp;nbsp;29
+                                                    <span class="time">
+                                                        <sup>o</sup>
+                                                    </span>
+                                                </span>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="s_three_columns pb32 o_colored_level" data-name="Columns">
+                            <div class="container">
+                                <div class="row d-flex align-items-stretch">
+                                    <div class="s_col_no_bgcolor pt16 pb16 col-lg-8">
+                                        <div class="card">
+                                            <div class="s_btn pb0 text-left" data-name="Button">
+                                                <img src="shop/static/src/images/tree_icon.png" class="tree_icon"
+                                                     data-original-title="" title="" aria-describedby="tooltip878154"
+                                                     loading="lazy"/>
+                                                <div class="btn tree_icon_btn">AFRICA - ACACIA JS658490</div>
+                                            </div>
+                                            <div class="card-body photo_detail ">
+                                                <div class="row d-flex align-items-stretch">
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 data-original-title="" title=""
+                                                                 aria-describedby="tooltip351981" loading="lazy"
+                                                                 data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 s_col_no_bgcolor pt16 pb16">
+                                                        <div class="card">
+                                                            <img src="shop/static/src/images/tree_img.jpg" alt=""
+                                                                 loading="lazy" data-original-id="664"
+                                                                 data-original-src="shop/static/src/images/tree_img.jpg"
+                                                                 data-mimetype="image/jpeg" data-resize-width="336"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="fs_20 ls_2">15th august 2020</div>
+                                                <p class="card-text o_default_snippet_text fs_15 ls_2">Photo took by
+                                                    Adam, local farmer
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1"/>
+                                    <div class="col-lg-3 pt16 pb16 o_colored_level">
+                                        <div class="tree_detail">
+                                            <div class="white_txtbox">
+                                                Now in Africa
+                                            </div>
+                                            <div class="pt16 fs_15">2nd september 2020</div>
+                                            <div class="fs_20">21:00
+                                                <span class="time">hs</span>
+                                                <br/>
+                                                <br/>
+                                                <img class="img-fluid o_we_custom_image"
+                                                     src="shop/static/src/images/temperature.png" loading="lazy" alt=""
+                                                     data-original-id="665"
+                                                     data-original-src="shop/static/src/images/temperature.png"
+                                                     data-mimetype="image/png" data-resize-width="99"/>
+                                                <span class="fs_44">&amp;nbsp;32
+                                                    <span class="time">
+                                                        <sup>o</sup>
+                                                    </span>
+                                                </span>
+                                                <br/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </t>
+            </t>
+
+        </template>
+
+<!--    </data>-->
+</odoo>

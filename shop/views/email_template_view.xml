@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="thankyou_email" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/thank-you-email</field>
+        <field name="website_published">True</field>
+        <field name="key">shop.thankyou_email</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="shop.thankyou_email">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <form action="gift-thanks" class="pt64" method="POST"
+                                  enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token"
+                                   t-att-value="request.csrf_token()"/>
+                            <section class="s_text_block pt32 pb32 o_colored_level" data-name="Text block">
+                                <div class="container">
+                                    <!--                            <t t-foreach="msg_data" t-as="line">-->
+                                    <div class="row">
+                                        <div class="col-lg-2 pt32 pb32"/>
+                                        <div class="col-lg-8 pt32 pb32 o_colored_level">
+                                            <!--                                            <div class="green_box1 ls-2">-->
+                                            <input type="hidden" name="csrf_token"
+                                                   t-att-value="request.csrf_token()"/>
+
+                                            <!--                                                <span t-esc="dear_name"/>-->
+                                            <input type="hidden" name="res_id" id="res_id_e" t-att-value="dear_name"/>
+
+
+                                            <br/>
+
+                                            <!--                                                <span t-esc="mail_msg"/>-->
+                                            <input type="hidden" name="mail_id" id="mail_id_e"
+                                                   t-att-value="mail_detail"/>
+                                            <!--                                            </div>-->
+                                            <div class="col-lg-5">
+
+
+                                                <input type="text" id="email" name="email" class="form_control1"
+                                                       placeholder="enter your email id"/>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 pt32 pb32"/>
+                                    </div>
+                                    <!--                            </t>-->
+                                    <button class="btn btn_fb btn_min_width" type="submit">Next</button>
+                                </div>
+                            </section>
+                            </form>
+
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+
+    <!--    <template id="email_template" name="Email">-->
+
+    <!--        <t t-name="website.email-template">-->
+    <!--            <t t-call="website.layout">-->
+    <!--                &lt;!&ndash;                <t t-set="main_object" t-value="msg_data"/>&ndash;&gt;-->
+    <!--                <div id="wrap" class="oe_structure">-->
+    <!--                    <section class="s_text_block pt32 pb32 o_colored_level" data-name="Text block">-->
+    <!--                        <div class="container">-->
+    <!--                            &lt;!&ndash;                            <t t-foreach="msg_data" t-as="line">&ndash;&gt;-->
+    <!--                            <div class="row">-->
+    <!--                                <div class="col-lg-2 pt32 pb32"/>-->
+    <!--                                <div class="col-lg-8 pt32 pb32 o_colored_level">-->
+    <!--                                    <div class="green_box1 ls-2">-->
+    <!--                                        &lt;!&ndash;                                        <form action="email-data" class="pt64" method="POST"&ndash;&gt;-->
+    <!--                                        &lt;!&ndash;                                              enctype="multipart/form-data">&ndash;&gt;-->
+    <!--                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+
+    <!--                                        DEAR :-->
+    <!--                                        <span t-esc="dear_name"/>-->
+    <!--                                        <br/>-->
+    <!--                                        <span t-esc="mail_msg"/>-->
+    <!--                                        &lt;!&ndash;                                        </form>&ndash;&gt;-->
+    <!--                                    </div>-->
+    <!--                                    <div class="col-lg-5">-->
+    <!--                                        <input type="text" id="email" name="email" class="form_control1"-->
+    <!--                                               placeholder="enter your email id"/>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+
+    <!--                                <div class="col-lg-2 pt32 pb32"/>-->
+    <!--                            </div>-->
+    <!--                            &lt;!&ndash;                            </t>&ndash;&gt;-->
+    <!--                            <button class="btn btn_fb btn_min_width" type="submit">Next</button>-->
+    <!--                        </div>-->
+    <!--                    </section>-->
+    <!--                </div>-->
+
+    <!--            </t>-->
+    <!--        </t>-->
+
+    <!--    </template>-->
+
+</odoo>

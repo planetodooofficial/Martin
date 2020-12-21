@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="gift_thanks" model="website.page">
+        <field name="name">Gift Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/gift-thank-you</field>
+        <field name="website_published">True</field>
+        <field name="key">shop.gift_thanks</field>
+        <field name="arch" type="xml">
+            <t name=" Gift Thanks" t-name="shop.gift_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <div class="col-lg-9 pt32">
+                                <div class="green_headn">
+                                    <div class="fs_39 ln_40 ls_2">Thank You
+                                        <br/>
+                                        for gifting the tree
+
+                                        <br/>
+                                        your tree will be claimed once the user creates the account
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+
+</odoo>
