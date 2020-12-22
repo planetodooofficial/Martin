@@ -372,7 +372,7 @@ class CustomerPortal(CustomerPortal):
 
 
     @http.route(['/my/trees', '/my/trees/page/<int:page>'], type='http', auth="user", website=True)
-    def portal_my_trees(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
+    def portal_my_quotes(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
         values = self._prepare_portal_layout_values()
         partner = request.env.user.partner_id
         PortalUserTree = request.env['website.sale.detail']
