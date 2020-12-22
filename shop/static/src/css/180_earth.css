@@ -1,6 +1,39 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.oe_signup_form, .oe_reset_password_form {
+    max-width: 570px;
+}
+
+
+.js_product ul{
+    display: none;
+}
+
+.btn-primary{
+    color: #FFFFFF;
+    background-color: #5B7129 !important;
+    border-color: #5B7129 !important;
+    border-radius: 8px !important;
+    font-family: walrus;
+    text-transform: uppercase;
+
+}
+
+
+.btn-secondary{
+    color: #FFFFFF;
+    background-color: #5B7129 !important;
+    border-color: #5B7129 !important;
+    border-radius: 8px !important;
+    font-family: walrus;
+    text-transform: uppercase;
+
+}
+
+main {
+    background-color: #FFD600;
+}
 
 @font-face {
     font-family: 'made_tommyregular';
@@ -730,7 +763,7 @@ background-image: url("../img/footer_giraffe.png");
     font-size: 22px;
     text-transform: uppercase;
     padding: 7px 64px;
-    min-width: 610px;
+    min-width: 575px;
 }
 
 .btn_min_width{
@@ -932,7 +965,7 @@ font-family: Made Tommy;
 
 
 .form_control1 {
-  width: 410px;
+  width: 300px;
    padding: 9px;
   box-sizing: border-box;
   font-family: Made tommy;
@@ -1023,7 +1056,7 @@ font-family: Made Tommy;
 }
 
 .listbox_s{
-    width: 278px;
+    width: 165px;
     padding: 9px;
     font-size: 24px;
     line-height: 1;
@@ -1038,7 +1071,7 @@ font-family: Made Tommy;
 }
 
 .listbox_m{
-    width: 410px;
+    width: 230px;
     padding: 9px;
     font-size: 24px;
     line-height: 1;

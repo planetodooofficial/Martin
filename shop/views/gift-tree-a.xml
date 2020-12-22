@@ -114,8 +114,8 @@
                                         <form action="gift-data" class="pt64" method="POST" enctype="multipart/form-data">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
-                                            <input type="text"  id="active-slider" name="active-slider"/>
-                                            <input type="text"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
+                                            <input type="hidden"  id="active-slider" name="active-slider"/>
+                                            <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
 
                                             <label for="dear" class="green_headn ls_2 fs_20 pr-5">dear:</label>
                                             <textarea name="dear_name" id="dear_name" rows="3" cols="50"
@@ -128,8 +128,7 @@
 
                                             <div class="pt32"/>
                                             <label for="email" class="green_headn ls_2 fs_20 pr-5">email:</label>
-                                            <input type="text" id="email" name="email" rows="3" cols="50" class="txtarea"
-                                                       placeholder="enter your email id"/>
+                                            <textarea id="email" name="email" rows="1" cols="50" class="txtarea"/>
 
                                             <br/>
                                             <br/>

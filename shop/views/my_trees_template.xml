@@ -1,5 +1,19 @@
 <odoo>
 
+
+<!--    Overriding breadcrumbs-->
+
+    <template id="portal.portal_breadcrumbs" name="Portal Breadcrumbs">
+        <ol t-if="page_name != 'home'" class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1 row">
+            <li class="breadcrumb-item ml-1"><a href="/old-member" aria-label="Home" title="Home"><i class="fa fa-home"/></a></li>
+            <li t-if="page_name == 'my_details'" class="breadcrumb-item">Details</li>
+        </ol>
+    </template>
+
+
+
+
+
     <template id="portal_my_trees" name="My Trees">
         <t t-call="portal.portal_layout">
             <t t-set="breadcrumbs_searchbar" t-value="True"/>
@@ -21,7 +35,8 @@
                 <t t-foreach="trees" t-as="tree">
                     <tr>
                         <!--                        <td><a t-att-href="tree.get_portal_url()"><t t-esc="tree.tree_id"/></a></td>-->
-                        <td><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.tree_id"/></a></td>
+                        <td class="text-right"><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.tree_id"/></a></td>
+<!--                        <td><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>-->
                         <td class="text-right"><span t-field="tree.product_tree_name"/></td>
                         <td class="text-right">
                             <span t-field="tree.qty"/>

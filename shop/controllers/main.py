@@ -28,7 +28,7 @@ class ShopTree(http.Controller):
 
 
 
-    def christmas_mail(self, email_to, mail_temp_id, dear_name, mail_msg, sign_up, website_url):
+    def christmas_mail(self, email_to, mail_temp_id, dear_name, mail_msg, website_url, sign_up):
         msg_vals_manager = {
             'subject': 'Merry Christmas',
             'email_to': email_to,
@@ -58,12 +58,14 @@ class ShopTree(http.Controller):
                                     <p style="margin-top:7px;margin-bottom:7px;font-family:Arial,Helvetica,san-serif;font-size:14px;color:#222222">
                                     """ + str(mail_msg) + """
                                     </p>
+                                    
                                     <div style="margin: 16px 0px 16px 0px;">
                                         <a href=" """ + str(sign_up) + """ "
                                         style="background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
                                             Accept invitation
                                         </a>
                                     </div>
+                                    
                                     Your Odoo domain is: <b><a href=' """ + str(website_url) + """ '>""" + str(
                 website_url) + """</a></b><br />
                                     Your sign in email is: <b><a href="/web/login?login=""" + str(
@@ -147,34 +149,34 @@ class ShopTree(http.Controller):
 
         user_ob = request.env['res.users'].sudo().search([('login', '=', email)])
 
-        if user_ob:
+        mail_temp_id = request.env['mail.template'].sudo().search([('id', '=', index)])
 
-            # new_user_id = request.env['res.users'].sudo().create({'name': dear_name, 'login': email})
+        website_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
 
-            mail_temp_id = request.env['mail.template'].search([('id', '=', index)])
+        if not user_ob:
 
-            user = request.env.user
+            new_user_id = request.env['res.users'].sudo().create({'name': dear_name, 'login': email})
 
-            website_url = request.env['ir.config_parameter'].sudo().get_param('web.base.url')
+            # user = request.env.user
 
-            # new_user_id.partner_id._compute_signup_url()
-            user.partner_id._compute_signup_url()
+            new_user_id.partner_id._compute_signup_url()
+            # user.partner_id._compute_signup_url()
 
-            # sign_up = new_user_id.partner_id.signup_url
-            sign_up = user.partner_id.signup_url
+            sign_up = new_user_id.partner_id.signup_url
+            # sign_up = user.partner_id.signup_url
 
 
-            # if post.get('tree_id'):
-            #     sale_detail_obj = request.env['website.sale.detail'].sudo().search([('tree_id', '=', post.get('tree_id'))])
-            #
-            #     sale_detail_obj.update({'res_partner_id': new_user_id.partner_id, 'is_gift': True,})
+            if post.get('tree_id'):
+                sale_detail_obj = request.env['website.sale.detail'].sudo().search([('tree_id', '=', post.get('tree_id'))])
+
+                sale_detail_obj.update({'res_partner_id': new_user_id.partner_id, 'is_gift': True,})
 
 
             template_list = mail_temp_id.name.split(" ")
 
             if 'Christmas' in template_list:
 
-                self.christmas_mail(email, mail_temp_id, dear_name, mail_msg, sign_up, website_url)
+                self.christmas_mail(email, mail_temp_id, dear_name, mail_msg, website_url, sign_up)
 
 
 
@@ -236,9 +238,20 @@ class ShopTree(http.Controller):
 
                 sale_detail_obj.update({'res_partner_id': user_ob.partner_id, 'is_gift': True,})
 
+                sign_up = user_ob.partner_id.signup_url
+
+                template_list = mail_temp_id.name.split(" ")
+
+                if 'Christmas' in template_list:
+                    self.christmas_mail(email, mail_temp_id, dear_name, mail_msg, website_url, sign_up)
+
+                else :
+                    self.christmas_mail(email, mail_temp_id, dear_name, mail_msg, website_url, sign_up)
 
 
-        return request.render('shop.welcome_trees', {'dear_name': dear_name, 'mail_msg': mail_msg})
+
+
+        return request.render('shop.thankyou_email', {})
 
 
     @http.route('/email-data', auth='public', type='http', website=True)
@@ -359,7 +372,7 @@ class CustomerPortal(CustomerPortal):
 
 
     @http.route(['/my/trees', '/my/trees/page/<int:page>'], type='http', auth="user", website=True)
-    def portal_my_quotes(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
+    def portal_my_trees(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
         values = self._prepare_portal_layout_values()
         partner = request.env.user.partner_id
         PortalUserTree = request.env['website.sale.detail']

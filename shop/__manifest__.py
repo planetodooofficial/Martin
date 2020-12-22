@@ -14,6 +14,7 @@ Search and Dispaly Product details by product id
         'views/resources.xml',
         'views/template.xml',
         'views/gift_thanku_view.xml',
+        'views/my_trees.xml',
         'views/email_template_view.xml',
         'views/mail_template_inherit_view.xml',
         'views/my_trees_template.xml',
@@ -29,7 +30,6 @@ Search and Dispaly Product details by product id
         'views/plant_a_trees_view.xml',
         'views/plant_tree.xml',
         'views/register_detail_view.xml',
-        'views/my_trees.xml',
         'views/website_menu.xml',
 
         # 'views/home_inherit_view.xml',

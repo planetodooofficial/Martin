@@ -37,7 +37,7 @@
 
                                         <div class="s_btn text-left pt24 pb16" data-name="Button">
                                             <a href="/gift-a-tree" class="btn btn-primary-small o_default_snippet_text">Yes</a>
-                                            <a href="#" class="btn btn-primary-small o_default_snippet_text">No</a>
+                                            <a href="/old-member" class="btn btn-primary-small o_default_snippet_text">No</a>
                                         </div>
 
                                     </div>

@@ -34,7 +34,7 @@
 
                                             <span t-field="user_id.image_1920"
                                                     t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
-                                                    class="card-img-top"/>
+                                                    class="card-img-top" style="border-radius: 50%; width: 175px; height: 175px; margin-left: 95px;"/>
 <!--                                                    class="d-flex h-100 justify-content-center align-items-center"/>-->
                                             <div class="card-body">
 <!--                                                <h3 class="card-title profile_head">JOHN SMITH</h3>-->
