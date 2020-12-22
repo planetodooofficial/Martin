@@ -35,9 +35,9 @@
                 <t t-foreach="trees" t-as="tree">
                     <tr>
                         <!--                        <td><a t-att-href="tree.get_portal_url()"><t t-esc="tree.tree_id"/></a></td>-->
-                        <td class="text-right"><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.tree_id"/></a></td>
+                        <td class="text-right"><span t-field="tree.tree_id"/></td>
 <!--                        <td><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>-->
-                        <td class="text-right"><span t-field="tree.product_tree_name"/></td>
+                        <td class="text-right"><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>
                         <td class="text-right">
                             <span t-field="tree.qty"/>
                         </td>
@@ -99,8 +99,7 @@
                                 class="card-img-top"/>
                                 <span t-field="tree.product_tree_name"/>
 
-                                <input type="text"  id="tree_id" name="tree_id" t-att-value="tree.product_tree_name.id"/>
-
+                                <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree.product_tree_name.id"/>
 
                                 <button class="btn btn_fb btn_min_width" type="submit">Gift Tree</button>
 
