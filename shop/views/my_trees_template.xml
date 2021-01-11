@@ -1,7 +1,7 @@
 <odoo>
 
 
-<!--    Overriding breadcrumbs-->
+    <!--    Overriding breadcrumbs-->
 
     <template id="portal.portal_breadcrumbs" name="Portal Breadcrumbs">
         <ol t-if="page_name != 'home'" class="o_portal_submenu breadcrumb mb-0 py-2 flex-grow-1 row">
@@ -36,7 +36,7 @@
                     <tr>
                         <!--                        <td><a t-att-href="tree.get_portal_url()"><t t-esc="tree.tree_id"/></a></td>-->
                         <td class="text-right"><span t-field="tree.tree_id"/></td>
-<!--                        <td><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>-->
+                        <!--                        <td><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>-->
                         <td class="text-right"><a t-attf-href="/my/trees/#{tree.id}?{{ keep_query() }}"><span t-field="tree.product_tree_name"/></a></td>
                         <td class="text-right">
                             <span t-field="tree.qty"/>
@@ -50,102 +50,313 @@
 
     <template id="portal_my_tree" name="My Tree">
         <t t-call="portal.portal_layout">
-<!--            <t t-set="o_portal_fullwidth_alert" groups="base.group_user">-->
-<!--                <t t-call="portal.portal_back_in_edit_mode">-->
-<!--                    <t t-set="backend_url" t-value="'/web#model=website.sale.detail&amp;id=%s&amp;view_type=form' % (tree.id)"/>-->
+            <!--            <t t-set="o_portal_fullwidth_alert" groups="base.group_user">-->
+            <!--                <t t-call="portal.portal_back_in_edit_mode">-->
+            <!--                    <t t-set="backend_url" t-value="'/web#model=website.sale.detail&amp;id=%s&amp;view_type=form' % (tree.id)"/>-->
+            <!--                </t>-->
+            <!--            </t>-->
+
+<!--            <t t-call="portal.portal_record_layout">-->
+<!--                <t t-set="card_header">-->
+<!--                    <div class="row no-gutters">-->
+<!--                        <div class="col-12">-->
+<!--                            <h5 class="d-flex mb-1 mb-md-0 row">-->
+<!--                                <span t-field="tree.product_tree_name" class="col-9 text-truncate"/>-->
+<!--                                <small class="text-muted d-none d-md-inline"> (#<span t-field="tree.id"/>)</small>-->
+
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </t>-->
+<!--                <t t-set="card_body">-->
+
+
+<!--                    <div class="row mb-4">-->
+<!--                        <div class="col-12 col-md-6 pb-2">-->
+
+<!--                            <form action="/gift-a-tree" class="pt64" method="POST" enctype="multipart/form-data">-->
+<!--                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>-->
+
+<!--                                <strong>Tree</strong>-->
+<!--                                <div class="row">-->
+
+<!--                                    <span t-field="tree.product_tree_name.image_1920"-->
+<!--                                          t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"-->
+<!--                                          class="card-img-top"/>-->
+<!--                                    <span t-field="tree.product_tree_name"/>-->
+
+<!--                                    <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree.product_tree_name.id"/>-->
+
+<!--                                    <button class="btn btn_fb btn_min_width" type="submit">Gift Tree</button>-->
+
+
+
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </div>-->
+
+<!--                    </div>-->
+
 <!--                </t>-->
 <!--            </t>-->
 
-            <t t-call="portal.portal_record_layout">
-                <t t-set="card_header">
-                    <div class="row no-gutters">
-                        <div class="col-12">
-                            <h5 class="d-flex mb-1 mb-md-0 row">
-                                <span t-field="tree.product_tree_name" class="col-9 text-truncate"/>
-                                <small class="text-muted d-none d-md-inline"> (#<span t-field="tree.id"/>)</small>
-                                <!--                                <div class="col-3 col-md-2 text-right">-->
-                                <!--                                    <small class="text-right">Status:</small>-->
-                                <!--                                    <span t-field="task.stage_id.name" class=" badge badge-pill badge-info" title="Current stage of this task"/>-->
-                                <!--                                </div>-->
-                            </h5>
+
+
+
+
+
+
+            <section class="s_three_columns pt32 pb32 o_colored_level" data-vcss="001" data-snippet="s_three_columns" data-name="Columns">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-right">
+                            <button class="btn gift_card_btn" type="submit">Gift A Tree</button>
                         </div>
                     </div>
-                </t>
-                <t t-set="card_body">
-                    <!--                    <div class="mb-1" t-if="user in task.sudo().project_id.allowed_user_ids">-->
-                    <!--                        <strong>Project:</strong> <a t-attf-href="/my/project/#{task.project_id.id}" t-field="task.project_id.name"/>-->
-                    <!--                    </div>-->
-
-                    <!--                    <div class="row mb-4">-->
-                    <!--                        <div class="col-12 col-md-6 mb-1">-->
-                    <!--                            <strong>Date:</strong> <span t-field="task.create_date" t-options='{"widget": "date"}'/>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="col-12 col-md-6" t-if="task.date_deadline">-->
-                    <!--                            <strong>Deadline:</strong> <span t-field="task.date_deadline" t-options='{"widget": "date"}'/>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-
-                    <div class="row mb-4">
-                        <div class="col-12 col-md-6 pb-2">
-
-                            <form action="/gift-a-tree" class="pt64" method="POST" enctype="multipart/form-data">
-                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-
-                            <strong>Tree</strong>
-                            <div class="row">
+                    <div class="row d-flex align-items-stretch">
+                        <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                            <div class="card bg-white tree-card">
+<!--                                <img class="card-img-top" src="/shop/static/src/images/image2.png" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip452150" data-original-id="618" data-original-src="/web/image/618-d068034b/image2.png" data-mimetype="image/png" data-resize-width="379"/>-->
 
                                 <span t-field="tree.product_tree_name.image_1920"
-                                t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
-                                class="card-img-top"/>
-                                <span t-field="tree.product_tree_name"/>
+                                          t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                                          class="card-img-top"/>
 
-                                <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree.product_tree_name.id"/>
+<!--                                <div class="yellow_strip_head">Plant Name</div>-->
+                                <div class="yellow_strip_head"><span t-field="tree.product_tree_name"/></div>
+                                <div class="planted_by">Michael Pate planted Me</div>
+                                <div class="details_plant">ID : <span class="details_green"><span t-field="tree.product_tree_name.id"/></span><br/>
 
-                                <button class="btn btn_fb btn_min_width" type="submit">Gift Tree</button>
-
-
-
+                                    Nickname : <span class="details_green">BABY TREE 2</span><br/>
+                                    Date of birth : <span class="details_green">11/11/2020</span><br/>
+                                    Country : <span class="details_green">CAMEROON</span><br/>
+                                    Place of birth : <span class="details_green">CENTRE</span><br/>
+                                    Farmer : <span class="details_green">Aum Thakkar</span><br/>
+                                    Residence : <span class="details_green">CAMEROON</span><br/>
+                                </div>
+                                <div data-snippet="s_share" class="s_share tree_share" data-name="Share">
+                                    <div class="s_share_title o_default_snippet_text">Share your profile with your community!</div>
+                                    <a href="#" target="_blank" class="s_share_facebook ">
+                                        <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/insta.svg" alt="" loading="lazy"/>
+                                    </a>
+                                    <a href="#" target="_blank" class="s_share_facebook " data-original-title="" title="" aria-describedby="tooltip244014">
+                                        <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/fb.svg" alt="" data-original-id="587" data-original-src="/web/image/587-473e02c3/fb.svg" data-mimetype="image/svg+xml" data-resize-width="29" loading="lazy"/>
+                                    </a>
+                                    <a href="#" target="_blank" class="s_share_twitter ">
+                                        <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/tw.svg" alt="" loading="lazy"/>
+                                    </a>
+                                </div>
                             </div>
-                            </form>
                         </div>
-                        <!--                        <div class="coll-12 col-md-6 pb-2" t-if="task.partner_id">-->
-                        <!--                            <strong>Reported by</strong>-->
-                        <!--                            <div class="row">-->
-                        <!--                                <div class="col flex-grow-0 pr-3">-->
-                        <!--                                    <img t-if="task.partner_id.image_1024" class="rounded-circle mt-1 o_portal_contact_img" t-att-src="image_data_uri(task.partner_id.image_1024)" alt="Contact"/>-->
-                        <!--                                    <img t-else="" class="rounded-circle mt-1 o_portal_contact_img" src="/web/static/src/img/user_menu_avatar.png" alt="Contact"/>-->
-                        <!--                                </div>-->
-                        <!--                                <div class="col pl-md-0">-->
-                        <!--                                    <div t-field="task.partner_id" t-options='{"widget": "contact", "fields": ["name", "email", "phone"]}'/>-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
+                        <div class="col-lg-9 s_col_no_bgcolor pt16 pb16">
+                            <div class="card">
+                                <img class="card-img-top" src="/shop/static/src/images/map.png" alt="" loading="lazy" data-original-id="592" data-original-src="/web/image/592-d5b529a1/map.png" data-mimetype="image/png" data-resize-width="680" data-original-title="" title="" aria-describedby="tooltip800072"/>
+                                <div class="white_strip_head">
+                                    <div class="row">
+                                        <div class="col-lg-9">Baby Tree 2 12/11/2020 4:58 PM</div>
+                                        <div class="col-lg-3">
+                                            <div data-snippet="s_share" class="s_share tree_share" data-name="Share">
+                                                <a href="#" target="_blank" class="s_share_facebook ">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/insta.svg" alt="" loading="lazy"/>
+                                                </a>
+                                                <a href="#" target="_blank" class="s_share_facebook " data-original-title="" title="" aria-describedby="tooltip244014">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/fb.svg" alt="" data-original-id="587" data-original-src="/web/image/587-473e02c3/fb.svg" data-mimetype="image/svg+xml" data-resize-width="29" loading="lazy"/>
+                                                </a>
+                                                <a href="#" target="_blank" class="s_share_twitter ">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/tw.svg" alt="" loading="lazy"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fs_13 ln_22 pt8">And here I am, in all my beauty! The farmer taking care of me took this picture after he transplanted me to the ground. I know, I'm still tiny, but nature has its own pace, and I do too!</div>
+                                    <div class="location">Latitude 04° 58′ 56.97″ N / Longitude 11° 52′ 57.61″ E</div>
+                                </div>
+                            </div>
+                            <div class="card mt32">
+                                <div class="row">
+                                    <div class="col-lg-7 o_colored_level">
+                                        <script src="http://172.104.253.15:8069/shop/static/src/css/slide.js"/>
+                                        <script type="text/javascript">
+                                            window.jssor_1_slider_init = function() {
+
+                                            var jssor_1_SlideshowTransitions = [
+                                            {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+                                            {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+                                            ];
+
+                                            var jssor_1_options = {
+                                            $AutoPlay: 1,
+                                            $SlideshowOptions: {
+                                            $Class: $JssorSlideshowRunner$,
+                                            $Transitions: jssor_1_SlideshowTransitions,
+                                            $TransitionsOrder: 1
+                                            },
+                                            $ArrowNavigatorOptions: {
+                                            $Class: $JssorArrowNavigator$
+                                            },
+                                            $ThumbnailNavigatorOptions: {
+                                            $Class: $JssorThumbnailNavigator$,
+                                            $Orientation: 2,
+                                            $NoDrag: true
+                                            }
+                                            };
+
+                                            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                                            /*#region responsive code begin*/
+
+                                            var MAX_WIDTH = 980;
+
+                                            function ScaleSlider() {
+                                            var containerElement = jssor_1_slider.$Elmt.parentNode;
+                                            var containerWidth = containerElement.clientWidth;
+
+                                            if (containerWidth) {
+
+                                            var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                                            jssor_1_slider.$ScaleWidth(expectedWidth);
+                                            }
+                                            else {
+                                            window.setTimeout(ScaleSlider, 30);
+                                            }
+                                            }
+
+                                            ScaleSlider();
+
+                                            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                                            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                                            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                                            /*#endregion responsive code end*/
+                                            };
+                                        </script>
+                                        <div id="jssor_1" style="position: relative; margin: 0px auto; top: 0px; left: 0px; width: 499px; height: 201.723px; overflow: hidden; visibility: visible;" data-jssor-slider="1">
+                                            <div style="display: block; position: absolute; top: 0px; left: 0px; width: 499px; height: 201.723px;">
+                                                <div style="display: block; position: absolute; top: 24.8617px; left: 61.5px; width: 376px; height: 152px; transform: scale(1.32845);">
+                                                    <div data-u="slides" style="cursor: default; position: absolute; top: 0px; left: 0px; width: 376px; height: 152px; overflow: hidden; margin: 0px; padding: 0px; transform-style: flat; z-index: 0; pointer-events: none;">
+                                                        <div style="width: 376px; height: 152px; top: 0px; left: 0px; position: absolute; z-index: 0; display: none;"/>
+                                                    </div>
+                                                    <div data-u="slides" style="cursor: default; position: absolute; top: 0px; left: 0px; width: 376px; height: 152px; overflow: hidden; margin: 0px; padding: 0px; transform-style: flat; z-index: 0;">
+                                                        <div style="width: 376px; height: 152px; top: 0px; left: -376px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                            <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
+                                                                <img data-u="image" src="/shop/static/src/images/image1.png" loading="lazy" border="0" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;" data-events="auto" data-display="block"/>
+                                                            </div>
+                                                            <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                        </div>
+                                                        <div style="width: 376px; height: 152px; top: 0px; left: 0px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                            <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
+                                                                <img data-u="image" src="/shop/static/src/images/image2.png" loading="lazy" border="0" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;" data-events="auto" data-display="block"/>
+                                                            </div>
+                                                            <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                        </div>
+                                                        <div style="width: 376px; height: 152px; top: 0px; left: 376px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                            <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
+                                                                <img data-u="image" src="/web/image/622-aa052a63/image3.png" loading="lazy" border="0" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;" data-events="auto" data-display="block"/>
+                                                            </div>
+                                                            <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: block; position: absolute; bottom: 0px; left: 0px; width: 499px; height: 39.8138px;">
+                                                <div u="thumbnavigator" style="position: absolute; bottom: 0px; left: 61.5px; width: 376px; height: 30px; color: rgb(0, 0, 0); text-align: center; overflow: hidden; cursor: default; background-color: rgb(255, 255, 255); visibility: visible; top: 4.90691px; transform: scale(1.32713);" data-jssor-slider="1">
+                                                    <div style="display: block; position: absolute; top: 0px; left: 0px; width: 376px; height: 30px;">
+                                                        <div style="display: block; position: absolute; top: 0px; left: 0px; width: 376px; height: 30px;">
+                                                            <div u="slides" style="position: absolute; overflow: hidden; width: 376px; height: 30px; left: 0px; top: 0px; margin: 0px; padding: 0px; transform-style: flat; z-index: 0; pointer-events: none;">
+                                                                <div style="width: 376px; height: 30px; top: 0px; left: 0px; display: block; position: absolute; z-index: 0;"/>
+                                                            </div>
+                                                            <div u="slides" style="position: absolute; overflow: hidden; width: 376px; height: 30px; left: 0px; top: 0px; margin: 0px; padding: 0px; transform-style: flat; z-index: 0;">
+                                                                <div style="width: 376px; height: 30px; top: -30px; left: 0px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                                    <div data-u="bg" style="width: 376px; height: 30px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;"/>
+                                                                    <div u="prototype" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; z-index: 1;" data-jssor-button="1" data-events="auto" data-display="block">
+                                                                        <div u="thumb" data-events="auto" data-display="block" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; font-family: &quot;Made tommy&quot;; font-weight: bold; padding-top: 0px; font-size: 13px; padding-left: 10px; box-sizing: border-box; z-index: 1;">Details of Tree &amp;amp; families</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 376px; height: 30px; top: 0px; left: 0px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                                    <div data-u="bg" style="width: 376px; height: 30px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;"/>
+                                                                    <div u="prototype" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; z-index: 1;" data-jssor-button="1" data-events="auto" data-display="block" class="av">
+                                                                        <div u="thumb" data-events="auto" data-display="block" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; font-family: &quot;Made tommy&quot;; font-weight: bold; padding-top: 0px; font-size: 13px; padding-left: 10px; box-sizing: border-box; z-index: 1;">Details of Tree &amp;amp; families</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div style="width: 376px; height: 30px; top: 30px; left: 0px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
+                                                                    <div data-u="bg" style="width: 376px; height: 30px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;"/>
+                                                                    <div u="prototype" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; z-index: 1;" data-jssor-button="1" data-events="auto" data-display="block">
+                                                                        <div u="thumb" data-events="auto" data-display="block" style="position: absolute; top: 0px; left: 0px; width: 376px; height: 30px; font-family: &quot;Made tommy&quot;; font-weight: bold; padding-top: 0px; font-size: 13px; padding-left: 10px; box-sizing: border-box; z-index: 1;">Details of Tree &amp;amp; families</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div style="display: block; position: absolute; top: 66.8585px; left: 6.18236px; width: 68.006px; height: 68.006px;">
+                                                <div data-u="arrowleft" class="jssora061" style="width: 55px; height: 55px; top: 6.503px; left: 6.503px; transform: scale(1.23647);" data-autocenter="2" data-scale="0.75" data-scale-left="0.75" data-jssor-button="1" data-nofreeze="1">
+                                                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:30%;height:30%;">
+                                                        <path class="a" d="M11949,1919L5964.9,7771.7c-127.9,125.5-127.9,329.1,0,454.9L11949,14079"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div style="display: block; position: absolute; top: 66.8585px; right: -30.9118px; width: 68.006px; height: 68.006px;">
+                                                <div data-u="arrowright" class="jssora061" style="width: 55px; height: 55px; top: 6.503px; right: -25px; left: 6.503px; transform: scale(1.23647);" data-autocenter="2" data-scale="0.75" data-scale-right="0.75" data-jssor-button="1" data-nofreeze="1">
+                                                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:30%;height:30%;">
+                                                        <path class="a" d="M5869,1919l5984.1,5852.7c127.9,125.5,127.9,329.1,0,454.9L5869,14079"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <script type="text/javascript">jssor_1_slider_init();
+                                        </script>
+                                    </div>
+                                    <div class="col-lg-1"/>
+                                    <div class="col-lg-4 o_colored_level">
+                                        <div class="row green_div">
+                                            <div class="col-lg-6">
+                                                <div class="yellow_head">Farmer Name</div>
+                                                <div class="farmer_details">Details of Farmer &amp;amp; his family</div>
+                                            </div>
+                                            <div class="col-lg-6 o_colored_level">
+                                                <img class="card-img-top" src="/shop/static/src/images/tree_profile.png" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip452150" data-original-id="631" data-original-src="/web/image/631-2d8c72ed/tree_profile.png" data-mimetype="image/png" data-resize-width="110"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card bg-white mt32">
+                                <img class="card-img-top" src="/shop/static/src/images/image3.png" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip800072" data-original-id="620" data-original-src="/web/image/620-aa052a63/image3.png" data-mimetype="image/png" data-resize-width="376"/>
+                                <div class="white_strip_head">
+                                    <div class="row">
+                                        <div class="col-lg-9">Baby Tree 2 12/11/2020 4:58 PM</div>
+                                        <div class="col-lg-3">
+                                            <div data-snippet="s_share" class="s_share tree_share" data-name="Share">
+                                                <a href="#" target="_blank" class="s_share_facebook ">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/insta.svg" alt="" loading="lazy"/>
+                                                </a>
+                                                <a href="#" target="_blank" class="s_share_facebook " data-original-title="" title="" aria-describedby="tooltip244014">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/fb.svg" alt="" data-original-id="587" data-original-src="/web/image/587-473e02c3/fb.svg" data-mimetype="image/svg+xml" data-resize-width="29" loading="lazy"/>
+                                                </a>
+                                                <a href="#" target="_blank" class="s_share_twitter ">
+                                                    <img class="img-fluid o_we_custom_image" src="/shop/static/src/images/tw.svg" alt="" loading="lazy"/>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="fs_13 ln_22 pt8">Group photo! I am standing among these young Cacao trees: guess who I am!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!--                    <div class="row" t-if="task.description or task.attachment_ids">-->
-                    <!--                        <div t-if="task.description" t-attf-class="col-12 col-lg-7 mb-4 mb-md-0 {{'col-lg-7' if task.attachment_ids else 'col-lg-12'}}">-->
-                    <!--                            <hr class="mb-1"/>-->
-                    <!--                            <div class="d-flex my-2">-->
-                    <!--                                <strong>Description</strong>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="py-1 px-2 bg-100 small" t-field="task.description"/>-->
-                    <!--                        </div>-->
-                    <!--                        <div t-if="task.attachment_ids" t-attf-class="col-12 col-lg-5 o_project_portal_attachments {{'col-lg-5' if task.description else 'col-lg-12'}}">-->
-                    <!--                            <hr class="mb-1 d-none d-lg-block"/>-->
-                    <!--                            <strong class="d-block mb-2">Attachments</strong>-->
-                    <!--                            <div class="row">-->
-                    <!--                                <div t-attf-class="col {{'col-lg-6' if not task.description else 'col-lg-12'}}">-->
-                    <!--                                    <ul class="list-group">-->
-                    <!--                                        <a class="list-group-item list-group-item-action d-flex align-items-center oe_attachments py-1 px-2" t-foreach='task.attachment_ids' t-as='attachment' t-attf-href="/web/content/#{attachment.id}?download=true&amp;access_token=#{attachment.access_token}" target="_blank" data-no-post-process="">-->
-                    <!--                                            <div class='oe_attachment_embedded o_image o_image_small mr-2 mr-lg-3' t-att-title="attachment.name" t-att-data-mimetype="attachment.mimetype" t-attf-data-src="/web/image/#{attachment.id}/50x40?access_token=#{attachment.access_token}"/>-->
-                    <!--                                            <div class='oe_attachment_name text-truncate'><t t-esc='attachment.name'/></div>-->
-                    <!--                                        </a>-->
-                    <!--                                    </ul>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                </t>
-            </t>
+                </div>
+            </section>
+
+
+
+
+
+
+
+
+
 
             <!--            <div class="mt32">-->
             <!--                <h4><strong>Message and communication history</strong></h4>-->
@@ -166,66 +377,59 @@
 
 
 
-    <template id="portal_my_trees_template" name="Tree Portal Template" inherit_id="portal.portal_sidebar" primary="True">
-        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
-            <t t-set="o_portal_fullwidth_alert" groups="base.group_user">
-                <t t-call="portal.portal_back_in_edit_mode">
-                    <t t-set="backend_url" t-value="'/web#model=website.sale.detail&amp;id=%s&amp;view_type=form' % (tree.id)"/>
-                </t>
-            </t>
+<!--    <template id="portal_my_trees_template" name="Tree Portal Template" inherit_id="portal.portal_sidebar" primary="True">-->
+<!--        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">-->
+<!--            <t t-set="o_portal_fullwidth_alert" groups="base.group_user">-->
+<!--                <t t-call="portal.portal_back_in_edit_mode">-->
+<!--                    <t t-set="backend_url" t-value="'/web#model=website.sale.detail&amp;id=%s&amp;view_type=form' % (tree.id)"/>-->
+<!--                </t>-->
+<!--            </t>-->
 
 
-            <div class="row mt16 o_portal_sale_sidebar">
-                <!-- Sidebar -->
-                <t t-call="portal.portal_record_sidebar">
-                    <t t-set="classes" t-value="'col-lg-auto d-print-none'"/>
+<!--            <div class="row mt16 o_portal_sale_sidebar">-->
+<!--                &lt;!&ndash; Sidebar &ndash;&gt;-->
+<!--                <t t-call="portal.portal_record_sidebar">-->
+<!--                    <t t-set="classes" t-value="'col-lg-auto d-print-none'"/>-->
 
-                    <t t-set="title">
-<!--                        <h2 class="mb-0"><b t-field="sale_order.amount_total" data-id="total_amount"/> </h2>-->
-                    </t>
-                    <t t-set="entries">
-                        <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
-<!--                            <li class="list-group-item flex-grow-1">-->
-<!--                                -->
-<!--                                <div class="o_download_pdf btn-toolbar flex-sm-nowrap">-->
-<!--                                    <div class="btn-group flex-grow-1 mr-1 mb-1">-->
-<!--                                        <a class="btn btn-secondary btn-block o_download_btn" t-att-href="sale_order.get_portal_url(report_type='pdf', download=True)" title="Download"><i class="fa fa-download"/> Download</a>-->
-<!--                                    </div>-->
-<!--                                    <div class="btn-group flex-grow-1 mb-1">-->
-<!--                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print" t-att-href="sale_order.get_portal_url(report_type='pdf')" id="print_invoice_report" title="Print" target="_blank"><i class="fa fa-print"/> Print</a>-->
-<!--                                    </div>-->
-<!--                                </div>-->
+<!--                    <t t-set="title">-->
+<!--                        &lt;!&ndash;                        <h2 class="mb-0"><b t-field="sale_order.amount_total" data-id="total_amount"/> </h2>&ndash;&gt;-->
+<!--                    </t>-->
+<!--                    <t t-set="entries">-->
+<!--                        <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">-->
+<!--                            &lt;!&ndash;                            <li class="list-group-item flex-grow-1">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                &ndash;&gt;-->
+<!--                            &lt;!&ndash;                                <div class="o_download_pdf btn-toolbar flex-sm-nowrap">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    <div class="btn-group flex-grow-1 mr-1 mb-1">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                        <a class="btn btn-secondary btn-block o_download_btn" t-att-href="sale_order.get_portal_url(report_type='pdf', download=True)" title="Download"><i class="fa fa-download"/> Download</a>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    <div class="btn-group flex-grow-1 mb-1">&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print" t-att-href="sale_order.get_portal_url(report_type='pdf')" id="print_invoice_report" title="Print" target="_blank"><i class="fa fa-print"/> Print</a>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                                </div>&ndash;&gt;-->
+<!--                            &lt;!&ndash;                            </li>&ndash;&gt;-->
+
+<!--                            <li class="navspy list-group-item pl-0 flex-grow-1" t-ignore="true" role="complementary">-->
+<!--                                <ul class="nav flex-column bs-sidenav"></ul>-->
 <!--                            </li>-->
 
-                            <li class="navspy list-group-item pl-0 flex-grow-1" t-ignore="true" role="complementary">
-                                <ul class="nav flex-column bs-sidenav"></ul>
-                            </li>
 
+<!--                        </ul>-->
+<!--                    </t>-->
+<!--                </t>-->
 
-                        </ul>
-                    </t>
-                </t>
+<!--                <div id="quote_content" class="col-12 col-lg justify-content-end">-->
 
-                <div id="quote_content" class="col-12 col-lg justify-content-end">
+<!--                    &lt;!&ndash; main content &ndash;&gt;-->
+<!--                    <div t-attf-class="card #{'pb-5' if report_type == 'html' else ''}" id="portal_sale_content">-->
+<!--                        <div t-call="shop.portal_my_trees"/>-->
+<!--                    </div>-->
 
-                <!-- main content -->
-                <div t-attf-class="card #{'pb-5' if report_type == 'html' else ''}" id="portal_sale_content">
-                    <div t-call="shop.portal_my_trees"/>
-                </div>
+<!--                </div>-->
 
-                </div>
+<!--            </div>&lt;!&ndash; // #quote_content &ndash;&gt;-->
 
-            </div><!-- // #quote_content -->
-
-        </xpath>
-    </template>
-
-
-
-
-
-
-
+<!--        </xpath>-->
+<!--    </template>-->
 
 
 </odoo>
