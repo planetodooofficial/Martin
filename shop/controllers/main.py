@@ -353,6 +353,9 @@ class ShopTree(http.Controller):
 
 
 
+    @http.route('/', type="http", auth="public", website=True)
+    def home_page(self, **kwargs):
+        return http.request.render('shop.home', {})
 
 
 

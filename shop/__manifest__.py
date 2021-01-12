@@ -32,7 +32,7 @@ Search and Dispaly Product details by product id
         'views/register_detail_view.xml',
         'views/website_menu.xml',
 
-        # 'views/home_inherit_view.xml',
+        'views/home_inherit_view.xml',
 
     ],
     'installable': True,
