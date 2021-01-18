@@ -28,7 +28,7 @@
   "depends"              :  [
                              'sales_team',
                              'website_sale',
-                             'wk_wizard_messages',
+                             'wk_wizard_message',
                              'web',
                              'web_tour',
                              'auth_signup',
