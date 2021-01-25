@@ -1,6 +1,39 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.oe_signup_form, .oe_reset_password_form {
+    max-width: 570px;
+}
+
+
+.js_product ul{
+    display: none;
+}
+
+.btn-primary{
+    color: #FFFFFF;
+    background-color: #5B7129 !important;
+    border-color: #5B7129 !important;
+    border-radius: 8px !important;
+    font-family: walrus;
+    text-transform: uppercase;
+
+}
+
+
+.btn-secondary{
+    color: #FFFFFF;
+    background-color: #5B7129 !important;
+    border-color: #5B7129 !important;
+    border-radius: 8px !important;
+    font-family: walrus;
+    text-transform: uppercase;
+
+}
+
+main {
+    background-color: #FFD600;
+}
 
 @font-face {
     font-family: 'made_tommyregular';
@@ -446,10 +479,6 @@ background-image: url("../img/footer_giraffe.png");
 	line-height: 20px;
 }
 
-.ln_22{
-	line-height: 22px;
-}
-
 .ln_40{
 	line-height:40px;
 }
@@ -607,9 +636,6 @@ background-image: url("../img/footer_giraffe.png");
     display: none;
 }
 
-.navbar-brand{
-	display: none;
-}
 
 .navbar-collapse {
 /*    flex-basis: 100%;
@@ -737,7 +763,7 @@ background-image: url("../img/footer_giraffe.png");
     font-size: 22px;
     text-transform: uppercase;
     padding: 7px 64px;
-    min-width: 610px;
+    min-width: 575px;
 }
 
 .btn_min_width{
@@ -912,41 +938,6 @@ font-family: Made Tommy;
 	color:#1D1D1B;
 }
 
-.gift_card_btn{
-	background-image: url("images/card_giftcard - material.png");
-	background-repeat: no-repeat;
-    background-position: 15px 12px;
-	color: #FFFFFF;
-    background-color: #5B7129 !important;
-    border-color: #5B7129 !important;
-    border-radius: 8px !important;
-    font-family: walrus;
-    font-size: 22px;
-    text-transform: uppercase;
-    padding: 7px 62px;
-}
-.green_div{
-	background-color:#5B7129;
-	border-radius: 16px;
-	padding: 20px 10px;
-	height: 200px;
-}
-
-.green_div .yellow_head{
-	font-family: walrus;
-	font-size: 14px;
-	color:#FFD600;
-	font-weight: bold;
-}
-
-.farmer_details{
-	font-family: walrus;
-	font-size: 15px;
-	color:#ffffff;
-	font-weight: bold;
-	line-height: 23px;
-}
-
 .form_control {
   width: 100%;
   box-sizing: border-box;
@@ -974,7 +965,7 @@ font-family: Made Tommy;
 
 
 .form_control1 {
-  width: 410px;
+  width: 300px;
    padding: 9px;
   box-sizing: border-box;
   font-family: Made tommy;
@@ -1065,7 +1056,7 @@ font-family: Made Tommy;
 }
 
 .listbox_s{
-    width: 278px;
+    width: 165px;
     padding: 9px;
     font-size: 24px;
     line-height: 1;
@@ -1080,7 +1071,7 @@ font-family: Made Tommy;
 }
 
 .listbox_m{
-    width: 410px;
+    width: 230px;
     padding: 9px;
     font-size: 24px;
     line-height: 1;
@@ -1236,77 +1227,6 @@ input::-webkit-inner-spin-button {
 	color: #fff;
 }
 
-.tree-card{
-	background-color: #FFF6C9 !important;
-	padding:15px;
-}
-
-.yellow_strip_head{
-	background-color: #FFD600;
-	padding: 9px;
-	text-align: center;
-	font-family: Made Tommy;
-	font-size: 20px;
-	font-weight: bold;
-	color: #1D1D1B;
-}
-
-.white_strip_head{
-	background-color: #ffffff;
-	padding: 15px;
-	font-family: Made Tommy;
-	font-size: 15px;
-	font-weight: bold;
-	color: #1D1D1B;
-}
-
-.location{
-	background-image:url("images/location1.png");
-	background-repeat: no-repeat;
-	font-size:13px;
-	padding-left: 20px;
-	background-position: left;
-    margin-top: 10px;
-}
-
-.planted_by{
-	font-family: Made Tommy;
-	font-size: 16px;
-	font-weight: bold;
-	border-bottom: 2px solid #FFD600;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 15px;
-	color: #1D1D1B;
-	text-align: center;
-
-}
-
-.details_plant{
-	font-family: Made Tommy;
-	font-size: 14px;
-	font-weight: bold;
-	line-height: 28px;
-	color: #1D1D1B;
-	text-align: center;
-	border-bottom: 2px solid #FFD600;
-	padding-bottom: 10px;
-	margin-bottom: 15px;
-
-}
-
-.details_green{
-	color:#5B7129;
-}
-
-.tree_share{
-	font-family: walrus;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #5B7129;
-}
-
 #my-input-container {
   display: inline-block;
   position: relative;
@@ -1393,26 +1313,6 @@ input::-webkit-inner-spin-button {
 .fa-plus-circle{color:#5B7129;vertical-align: middle;}
 
 .total_price{float: right; font-family: walrus; font-size: 27px; color:#fff;}
-
-
-/***********************************************/
-.jssorl-009-spin img {
-            animation-name: jssorl-009-spin;
-            animation-duration: 1.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        @keyframes jssorl-009-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        .jssora061 {display:block;position:absolute;cursor:pointer;}
-        .jssora061 .a {fill:none;stroke:#fff;stroke-width:1560;stroke-linecap:round;}
-        .jssora061:hover {opacity:.8;}
-        .jssora061.jssora061dn {opacity:.5;}
-        .jssora061.jssora061ds {opacity:.3;pointer-events:none;}
 
 /*************************************************/
 .wine-slider {
@@ -1612,15 +1512,6 @@ input::-webkit-inner-spin-button {
 	bottom: 220px !important;
 }
 
-.carousel-control-prev {
-    left: 0;
-    display: none;
-}
-
-.carousel-control-next {
-    right: 0;
-    display: none;
-}
 
 .fs_30{
 		font-size: 30px !important;
@@ -1722,16 +1613,4 @@ input::-webkit-inner-spin-button {
 	.image_bg{
 		display: none;
 	}
-}
-
-
-
-.navbar .o_menu_loading .nav-item{
-    opacity: 1 !important;
-}
-
-
-#wrapwrap.o_portal {
-    background-color: #FFD600 !important;
-    color: #212529;
 }
