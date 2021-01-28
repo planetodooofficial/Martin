@@ -13,6 +13,19 @@
 
 
 
+    <template id="portal.portal_table" name="My Portal Table">
+        <div t-attf-class="table-responsive table-striped rounded border-top-0 #{classes if classes else ''}">
+            <table class="table rounded mb-0 bg-yellow o_portal_my_doc_table">
+                <t t-raw="0"/>
+            </table>
+        </div>
+        <div t-if="pager" class="o_portal_pager text-center">
+            <t t-call="portal.pager"/>
+        </div>
+    </template>
+
+
+
 
     <template id="portal_my_trees" name="My Trees">
         <t t-call="portal.portal_layout">

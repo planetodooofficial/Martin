@@ -18,7 +18,7 @@
         <!--            </img>-->
 
         <div class="form-group field-company-id-file" style="text-align: center;">
-            <label for="bank_st_front_pg_attachment">Company ID</label>
+            <label for="bank_st_front_pg_attachment">Upload Your Profile Picture here</label>
             <input type="file" name="bank_st_front_pg_attachment" class="file" multiple="true"
                    data-show-upload="true"
                    data-show-caption="true" lass="file"
@@ -163,7 +163,6 @@
                 <div class="heading_main" style="width: 570px;">JOIN 180. EARTH</div>
                 <div class="subheading_main pt16 pb88">Become a forest guardian!</div>
 
-
                 <div class="form-group field-login">
                     <!--                    <label for="login">Email</label>-->
                     <input type="text" placeholder="ENTER YOUR EMAIL" name="login" t-att-value="login" id="login" t-attf-class="form-control" required="required" autofocus="autofocus" autocapitalize="off"/>
@@ -200,15 +199,19 @@
 
     <template id="auth_oauth.providers" name="OAuth Providers">
         <t t-if="len(providers) &gt; 0">
-            <em t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}">- or -</em>
+
+            <em t-attf-class="d-block text-center text-muted small my-#{len(providers) if len(providers) &lt; 3 else 3}" style="    font-weight: 900;
+    font-size: 25px;"> OR </em>
+
             <div class="o_auth_oauth_providers list-group mt-1 mb-1 text-left">
                 <a t-foreach="providers" t-as="p" class="btn btn_fb" t-att-href="p['auth_link']" style="margin-bottom: 10px;">
-                    <i t-att-class="p['css_class']"/>
+<!--                    <i t-att-class="p['css_class']"/>-->
                     <t t-esc="p['body']"/>
                     <br/>
                 </a>
 
             </div>
+
         </t>
     </template>
 
@@ -287,7 +290,35 @@
     </template>
 
 
+<!--    My Account menu override-->
 
+    <template id="portal.my_account_link" name="Link to frontend portal" inherit_id="portal.user_dropdown">
+        <xpath expr="//*[@id='o_logout_divider']" position="before">
+            <a href="/old-member" role="menuitem" class="dropdown-item">My Account</a>
+        </xpath>
+    </template>
+
+
+
+
+
+
+
+
+<!--    To remove  cart  from header-->
+
+    <template id="website_sale.header_cart_link" name="Header Cart Link">
+        <t t-set="website_sale_order" t-value="website.sale_get_order()" />
+        <t t-set="show_cart" t-value="true"/>
+<!--        <li t-attf-class="#{_item_class} divider d-none"/> &lt;!&ndash; Make sure the cart and related menus are not folded (see autohideMenu) &ndash;&gt;-->
+<!--        <li t-attf-class="o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">-->
+<!--            <a href="/shop/cart" t-attf-class="#{_link_class}">-->
+<!--                <i t-if="_icon" class="fa fa-shopping-cart"/>-->
+<!--                <span t-if="_text">My Cart</span>-->
+<!--                <sup class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>-->
+<!--            </a>-->
+<!--        </li>-->
+    </template>
 
 
 
@@ -354,6 +385,104 @@
                     </div>
                 </div>
                 <div class="oe_structure" id="oe_structure_website_sale_cart_2"/>
+            </div>
+        </t>
+    </template>
+
+
+
+
+
+
+
+<!--    Overridding base Odoo Product Details page to hide Price List and breadcrumbs-->
+
+    <template id="website_sale.product" name="Product" track="1">
+
+        <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+        <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+
+        <t t-call="website.layout">
+            <t t-set="additional_title" t-value="product.name" />
+            <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
+                <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}" id="product_detail" t-att-data-view-track="view_track and '1' or '0'">
+                    <div class="row">
+<!--                        <div class="col-md-4">-->
+<!--                            <ol class="breadcrumb">-->
+<!--                                <li class="breadcrumb-item">-->
+<!--                                    <a t-att-href="keep(category=0)">Products</a>-->
+<!--                                </li>-->
+<!--                                <li t-if="category" class="breadcrumb-item">-->
+<!--                                    <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)" t-field="category.name" />-->
+<!--                                </li>-->
+<!--                                <li class="breadcrumb-item active">-->
+<!--                                    <span t-field="product.name" />-->
+<!--                                </li>-->
+<!--                            </ol>-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8">-->
+<!--                            <div class="form-inline justify-content-end">-->
+<!--                                <t t-call="website_sale.search">-->
+<!--                                    <t t-set="search" t-value="False"/>-->
+<!--                                </t>-->
+<!--                                <t t-call="website_sale.pricelist_list">-->
+<!--                                    <t t-set="_classes" t-valuef="ml-2"/>-->
+<!--                                </t>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-8">
+                            <t t-call="website_sale.shop_product_carousel"/>
+                        </div>
+                        <div class="col-md-6 col-xl-4" id="product_details">
+                            <h1 itemprop="name" t-field="product.name">Product Name</h1>
+                            <span itemprop="url" style="display:none;" t-esc="product.website_url"/>
+                            <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                <div class="js_product js_main_product">
+                                    <t t-placeholder="select">
+                                        <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                        <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                        <t t-if="combination" t-call="sale.variants">
+                                            <t t-set="ul_class" t-value="'flex-column'" />
+                                            <t t-set="parent_combination" t-value="None" />
+                                        </t>
+                                        <t t-else="">
+                                            <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                        </t>
+                                    </t>
+                                    <t t-call="website_sale.product_price" />
+                                    <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                    <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+                                    <div id="product_option_block"/>
+                                </div>
+                            </form>
+                            <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                            <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                            <hr t-if="product.description_sale" />
+                            <div>
+                                <p t-field="product.description_sale" class="text-muted mt-3" placeholder="A short description that will also appear on documents." />
+                                <div id="product_attributes_simple">
+                                    <hr t-if="sum([(1 if len(l.value_ids)==1 else 0) for l in product.attribute_line_ids])"/>
+                                    <p class="text-muted">
+                                        <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                                        <t t-foreach="single_value_attributes" t-as="attribute">
+                                            <span t-field="attribute.name"/>:
+                                            <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                                                <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
+                                            </t>
+                                            <br/>
+                                        </t>
+                                    </p>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+                </section>
+                <div itemprop="description" t-field="product.website_description" class="oe_structure oe_empty mt16" id="product_full_description"/>
             </div>
         </t>
     </template>

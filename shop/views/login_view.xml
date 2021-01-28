@@ -7,6 +7,7 @@
             <field name="parent_id" ref="website.main_menu"/>
             <field name="sequence">55</field>
         </record>
+
         <template id="login_info" name="login information">
             <t t-name="website.login-1">
                 <t t-call="website.layout">

@@ -117,18 +117,18 @@
                                             <input type="hidden"  id="active-slider" name="active-slider"/>
                                             <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
 
-                                            <label for="dear" class="green_headn ls_2 fs_20 pr-5">dear:</label>
-                                            <textarea name="dear_name" id="dear_name" rows="3" cols="50"
+                                            <label for="dear" class="green_headn ls_2 fs_20 pr-5">Dear:</label>
+                                            <textarea name="dear_name" id="dear_name" required="required" rows="3" cols="50"
                                                       class="txtarea"/>
                                             <br/>
                                             <div class="pt32"/>
-                                            <label for="message" class="green_headn ls_2 fs_20 pr-5">message:</label>
-                                            <textarea name="mail_msg" id="mail_msg" rows="5" cols="50" class="txtarea"/>
+                                            <label for="message" class="green_headn ls_2 fs_20 pr-5">Message:</label>
+                                            <textarea name="mail_msg" id="mail_msg" required="required" rows="5" cols="50" class="txtarea"/>
                                             <br/>
 
                                             <div class="pt32"/>
-                                            <label for="email" class="green_headn ls_2 fs_20 pr-5">email:</label>
-                                            <textarea id="email" name="email" rows="1" cols="50" class="txtarea"/>
+                                            <label for="email" class="green_headn ls_2 fs_20 pr-5">Email:</label>
+                                            <input type="text" id="email" name="email" required="required" rows="1" cols="50" class="txtarea"/>
 
                                             <br/>
                                             <br/>

@@ -33,7 +33,7 @@
                                             your tree to someone?
 
                                         </div>
-
+                                        <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
 
                                         <div class="s_btn text-left pt24 pb16" data-name="Button">
                                             <a href="/gift-a-tree" class="btn btn-primary-small o_default_snippet_text">Yes</a>

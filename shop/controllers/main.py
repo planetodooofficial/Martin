@@ -251,7 +251,7 @@ class ShopTree(http.Controller):
 
 
 
-        return request.render('shop.thankyou_email', {})
+        return request.render('shop.gift_thanks', {})
 
 
     @http.route('/email-data', auth='public', type='http', website=True)
@@ -588,7 +588,7 @@ class CustomWebsiteSale(WebsiteSale):
                 partner.write({'sale_detail_ids': [(4, partner_sale_line.id)]})
 
         # return request.redirect('/shop/confirmation')
-        return request.redirect('/shopping-thankyou')
+        return request.redirect('/shopping-thankyou', {'tree_id': partner_sale_line.tree_id})
 
 
 
