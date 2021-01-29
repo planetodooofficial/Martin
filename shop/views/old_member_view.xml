@@ -112,7 +112,8 @@
 <!--                                                    <br/>-->
 <!--                                                    a Tree-->
 <!--                                                </div>-->
-                                                <a href="/plant-a-tree" class="btn tree_icon_btn">PLANT A TREE</a>
+<!--                                                <a href="/plant-a-tree" class="btn tree_icon_btn">PLANT A TREE</a>-->
+                                                <a href="/shop" class="btn tree_icon_btn">PLANT A TREE</a>
                                             </div>
                                             <div class="card-body">
                                                 <div class="s_share pt144" data-name="Share">

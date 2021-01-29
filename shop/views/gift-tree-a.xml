@@ -75,7 +75,7 @@
                                                 <span t-field="line.template_img"
                                                     t-options="{'widget': 'image', 'preview_image': 'template_img'}"
                                                     class="card-img-top"/>
-                                                <span t-esc="line.id"/>
+<!--                                                <span t-esc="line.id"/>-->
                                             </div>
                                         </a>
                                             <t t-set="i" t-value="i+1"/>

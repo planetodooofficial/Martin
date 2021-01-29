@@ -205,7 +205,7 @@
 
             <div class="o_auth_oauth_providers list-group mt-1 mb-1 text-left">
                 <a t-foreach="providers" t-as="p" class="btn btn_fb" t-att-href="p['auth_link']" style="margin-bottom: 10px;">
-<!--                    <i t-att-class="p['css_class']"/>-->
+                    <!--                    <i t-att-class="p['css_class']"/>-->
                     <t t-esc="p['body']"/>
                     <br/>
                 </a>
@@ -290,7 +290,7 @@
     </template>
 
 
-<!--    My Account menu override-->
+    <!--    My Account menu override-->
 
     <template id="portal.my_account_link" name="Link to frontend portal" inherit_id="portal.user_dropdown">
         <xpath expr="//*[@id='o_logout_divider']" position="before">
@@ -301,23 +301,50 @@
 
 
 
+    <!--    Removing contact us button from header-->
+
+    <template id="website.template_header_default_oe_structure_header_default_1" inherit_id="website.template_header_default" name="Template Header Default (oe_structure_header_default_1)">
+        <xpath expr="//*[hasclass('oe_structure')][@id='oe_structure_header_default_1']" position="replace">
+            <!--            <div class="oe_structure" id="oe_structure_header_default_1">-->
+            <!--                <section class="s_text_block" data-snippet="s_text_block" data-name="Text">-->
+            <!--                    <div class="container">-->
+            <!--                        <a href="/contactus" class="btn btn-primary ml-4">Contact Us</a>-->
+            <!--                    </div>-->
+            <!--                </section>-->
+            <!--            </div>-->
+        </xpath>
+    </template>
 
 
 
 
-<!--    To remove  cart  from header-->
+    <!--    Removing Logo Portion-->
+
+    <template id="website.option_header_brand_logo" inherit_id="website.placeholder_header_brand" name="Header Brand Logo" active="True">
+        <xpath expr="//*[@id='o_fake_navbar_brand']" position="replace">
+<!--            <a href="/" t-attf-class="navbar-brand logo #{_link_class}">-->
+<!--                <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>-->
+<!--            </a>-->
+        </xpath>
+    </template>
+
+
+
+
+
+    <!--    To remove  cart  from header-->
 
     <template id="website_sale.header_cart_link" name="Header Cart Link">
         <t t-set="website_sale_order" t-value="website.sale_get_order()" />
         <t t-set="show_cart" t-value="true"/>
-<!--        <li t-attf-class="#{_item_class} divider d-none"/> &lt;!&ndash; Make sure the cart and related menus are not folded (see autohideMenu) &ndash;&gt;-->
-<!--        <li t-attf-class="o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">-->
-<!--            <a href="/shop/cart" t-attf-class="#{_link_class}">-->
-<!--                <i t-if="_icon" class="fa fa-shopping-cart"/>-->
-<!--                <span t-if="_text">My Cart</span>-->
-<!--                <sup class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>-->
-<!--            </a>-->
-<!--        </li>-->
+        <!--        <li t-attf-class="#{_item_class} divider d-none"/> &lt;!&ndash; Make sure the cart and related menus are not folded (see autohideMenu) &ndash;&gt;-->
+        <!--        <li t-attf-class="o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">-->
+        <!--            <a href="/shop/cart" t-attf-class="#{_link_class}">-->
+        <!--                <i t-if="_icon" class="fa fa-shopping-cart"/>-->
+        <!--                <span t-if="_text">My Cart</span>-->
+        <!--                <sup class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>-->
+        <!--            </a>-->
+        <!--        </li>-->
     </template>
 
 
@@ -395,7 +422,7 @@
 
 
 
-<!--    Overridding base Odoo Product Details page to hide Price List and breadcrumbs-->
+    <!--    Overridding base Odoo Product Details page to hide Price List and breadcrumbs-->
 
     <template id="website_sale.product" name="Product" track="1">
 
@@ -408,29 +435,29 @@
             <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale">
                 <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}" id="product_detail" t-att-data-view-track="view_track and '1' or '0'">
                     <div class="row">
-<!--                        <div class="col-md-4">-->
-<!--                            <ol class="breadcrumb">-->
-<!--                                <li class="breadcrumb-item">-->
-<!--                                    <a t-att-href="keep(category=0)">Products</a>-->
-<!--                                </li>-->
-<!--                                <li t-if="category" class="breadcrumb-item">-->
-<!--                                    <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)" t-field="category.name" />-->
-<!--                                </li>-->
-<!--                                <li class="breadcrumb-item active">-->
-<!--                                    <span t-field="product.name" />-->
-<!--                                </li>-->
-<!--                            </ol>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-8">-->
-<!--                            <div class="form-inline justify-content-end">-->
-<!--                                <t t-call="website_sale.search">-->
-<!--                                    <t t-set="search" t-value="False"/>-->
-<!--                                </t>-->
-<!--                                <t t-call="website_sale.pricelist_list">-->
-<!--                                    <t t-set="_classes" t-valuef="ml-2"/>-->
-<!--                                </t>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="col-md-4">-->
+                        <!--                            <ol class="breadcrumb">-->
+                        <!--                                <li class="breadcrumb-item">-->
+                        <!--                                    <a t-att-href="keep(category=0)">Products</a>-->
+                        <!--                                </li>-->
+                        <!--                                <li t-if="category" class="breadcrumb-item">-->
+                        <!--                                    <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)" t-field="category.name" />-->
+                        <!--                                </li>-->
+                        <!--                                <li class="breadcrumb-item active">-->
+                        <!--                                    <span t-field="product.name" />-->
+                        <!--                                </li>-->
+                        <!--                            </ol>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="col-md-8">-->
+                        <!--                            <div class="form-inline justify-content-end">-->
+                        <!--                                <t t-call="website_sale.search">-->
+                        <!--                                    <t t-set="search" t-value="False"/>-->
+                        <!--                                </t>-->
+                        <!--                                <t t-call="website_sale.pricelist_list">-->
+                        <!--                                    <t t-set="_classes" t-valuef="ml-2"/>-->
+                        <!--                                </t>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-xl-8">
