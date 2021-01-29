@@ -578,6 +578,8 @@ class CustomWebsiteSale(WebsiteSale):
 
         PaymentProcessing.remove_payment_transaction(tx)
 
+        values = {}
+
         if order.state == 'sale' and tx.state == 'done':
             partner = request.env.user.partner_id
 
@@ -587,17 +589,9 @@ class CustomWebsiteSale(WebsiteSale):
 
                 partner.write({'sale_detail_ids': [(4, partner_sale_line.id)]})
 
+                values.update({'tree_id': partner_sale_line})
+
+
         # return request.redirect('/shop/confirmation')
-        return request.redirect('/shopping-thankyou', {'tree_id': partner_sale_line.tree_id})
-
-
-
-
-
-
-
-
-
-
-
-
+        # return request.redirect('/shopping-thankyou', {'tree_id': partner_sale_line.tree_id})
+        return request.render('shop.shop_thank', values)

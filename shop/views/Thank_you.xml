@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-<!--        <record id="menu_shop_thankyou" model="website.menu">-->
-<!--            <field name="name">Shop Thank</field>-->
-<!--            <field name="url">/shopping-thankyou</field>-->
-<!--            <field name="parent_id" ref="website.main_menu"/>-->
-<!--            <field name="sequence">55</field>-->
-<!--        </record>-->
+        <record id="menu_shop_thankyou" model="website.menu">
+            <field name="name">Shop Thank</field>
+            <field name="url">/shopping-thankyou</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence">55</field>
+        </record>
 
 
         <template id="shop_thank" name="shopping thank you">
@@ -33,12 +33,19 @@
                                             your tree to someone?
 
                                         </div>
-                                        <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
+
+                                        <form action="/gift-a-tree" class="pt64" method="POST" enctype="multipart/form-data">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                        <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id.tree_id"/>
 
                                         <div class="s_btn text-left pt24 pb16" data-name="Button">
-                                            <a href="/gift-a-tree" class="btn btn-primary-small o_default_snippet_text">Yes</a>
+<!--                                            <a href="/gift-a-tree" class="btn btn-primary-small o_default_snippet_text">Yes</a>-->
+                                            <button class="btn btn-primary-small o_default_snippet_text" type="submit">Yes</button>
                                             <a href="/old-member" class="btn btn-primary-small o_default_snippet_text">No</a>
                                         </div>
+
+                                        </form>
 
                                     </div>
                                     <div class="col-lg-3 pt32"/>
