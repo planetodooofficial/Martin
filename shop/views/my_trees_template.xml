@@ -163,7 +163,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-9 s_col_no_bgcolor pt16 pb16">
-                                <div class="card">
+                                <div class="card sir_rajdeep">
                                     <img class="card-img-top" src="/shop/static/src/images/map.png" alt="" loading="lazy" data-original-id="592" data-original-src="/web/image/592-d5b529a1/map.png" data-mimetype="image/png" data-resize-width="680" data-original-title="" title="" aria-describedby="tooltip800072"/>
                                     <div class="white_strip_head">
                                         <div class="row">
@@ -187,7 +187,8 @@
                                     </div>
                                 </div>
 
-                                <div class="card mt32" t-if="tree.product_tree_name.product_tmpl_id.farmer_partner_id.farmer_photo_4">
+<!--                                <div class="card mt32 tree" t-if="tree.product_tree_name.product_tmpl_id.farmer_partner_id.farmer_photo_4">-->
+                                <div class="card mt32 tree">
                                     <div class="row">
                                         <div class="col-lg-7 o_colored_level">
                                             <script src="http://172.104.253.15:8069/shop/static/src/css/slide.js"/>
@@ -249,20 +250,20 @@
                                                 <div style="display: block; position: absolute; top: 0px; left: 0px; width: 499px; height: 201.723px;">
                                                     <div style="display: block; position: absolute; top: 24.8617px; left: 61.5px; width: 376px; height: 152px; transform: scale(1.32845);">
                                                         <div data-u="slides" style="cursor: default; position: absolute; top: 0px; left: 0px; width: 376px; height: 152px; overflow: hidden; margin: 0px; padding: 0px; transform-style: flat; z-index: 0; pointer-events: none;">
-                                                            <div style="width: 376px; height: 152px; top: 0px; left: 0px; position: absolute; z-index: 0; display: none;"/>
+                                                            <div style="width: 376px; height: 152px; top: 0px; left: 0px; position: absolute; z-index: 0;"/>
                                                         </div>
                                                         <div data-u="slides" style="cursor: default; position: absolute; top: 0px; left: 0px; width: 376px; height: 152px; overflow: hidden; margin: 0px; padding: 0px; transform-style: flat; z-index: 0;">
                                                             <div style="width: 376px; height: 152px; top: 0px; left: -376px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
                                                                 <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
                                                                     <!--                                                                <img data-u="image" src="/shop/static/src/images/image1.png" loading="lazy" border="0" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;" data-events="auto" data-display="block"/>-->
 
-                                                                    <span t-field="tree.product_tree_name.product_tmpl_id.tree_image_1"
+                                                                    <span t-field="tree.product_tree_name.product_tmpl_id.tree_image_2"
                                                                           t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
                                                                           style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;"
                                                                           class="card-img-top"/>
 
                                                                 </div>
-                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1;">Details of Tree &amp;amp; families</div>
                                                             </div>
                                                             <div style="width: 376px; height: 152px; top: 0px; left: 0px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
                                                                 <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
@@ -274,13 +275,13 @@
                                                                           class="card-img-top"/>
 
                                                                 </div>
-                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1;">Details of Tree &amp;amp; families</div>
                                                             </div>
                                                             <div style="width: 376px; height: 152px; top: 0px; left: 376px; position: absolute; z-index: 1; overflow: hidden; transform-style: flat;">
                                                                 <div data-u="bg" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; overflow: hidden; background-color: rgba(0, 0, 0, 0); background-image: none;">
                                                                     <img data-u="image" src="/web/image/622-aa052a63/image3.png" loading="lazy" border="0" style="width: 376px; height: 152px; top: 0px; left: 0px; display: block; position: absolute; max-width: 10000px; z-index: 1;" data-events="auto" data-display="block"/>
                                                                 </div>
-                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1; display: none;">Details of Tree &amp;amp; families</div>
+                                                                <div u="thumb" data-events="auto" data-display="block" style="z-index: 1;">Details of Tree &amp;amp; families</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -343,11 +344,14 @@
                                                     <div class="farmer_details">Details of Farmer &amp;amp; his family</div>
                                                 </div>
                                                 <div class="col-lg-6 o_colored_level">
-                                                    <!--                                                <img class="card-img-top" src="/shop/static/src/images/tree_profile.png" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip452150" data-original-id="631" data-original-src="/web/image/631-2d8c72ed/tree_profile.png" data-mimetype="image/png" data-resize-width="110"/>-->
 
-                                                    <span t-field="tree.product_tree_name.product_tmpl_id.farmer_partner_id.farmer_photo_4" data-mimetype="image/png" data-resize-width="110"
+
+<!--                                                                                                    <img class="card-img-top" src="/shop/static/src/images/tree_profile.png" alt="" loading="lazy" data-original-title="" title="" aria-describedby="tooltip452150" data-original-id="631" data-original-src="/web/image/631-2d8c72ed/tree_profile.png" data-mimetype="image/png" data-resize-width="110"/>-->
+                                                    <t t-if="tree.product_tree_name.product_tmpl_id.farmer_partner_id.farmer_photo_2">
+                                                    <span t-field="tree.product_tree_name.product_tmpl_id.farmer_partner_id.farmer_photo_2" data-mimetype="image/png" data-resize-width="110"
                                                           t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
                                                           class="card-img-top"/>
+                                                    </t>
 
                                                 </div>
                                             </div>
