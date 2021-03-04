@@ -163,8 +163,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-9 s_col_no_bgcolor pt16 pb16">
-                                <div class="card sir_rajdeep">
-                                    <img class="card-img-top" src="/shop/static/src/images/map.png" alt="" loading="lazy" data-original-id="592" data-original-src="/web/image/592-d5b529a1/map.png" data-mimetype="image/png" data-resize-width="680" data-original-title="" title="" aria-describedby="tooltip800072"/>
+                                <div class="card">
+<!--                                    <iframe src="https://maps.google.com/maps?q=-13.93074724976777,33.79144323817908&amp;hl=es&amp;z=14&amp;output=embed" width="880" height="352" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>-->
+                                    <iframe t-att-src="'https://maps.google.com/maps?q=%s&amp;hl=es&amp;z=14&amp;output=embed'%(tree.product_tree_name.gps_location)" width="880" height="352" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                                     <div class="white_strip_head">
                                         <div class="row">
                                             <div class="col-lg-9">Baby Tree 2 12/11/2020 4:58 PM</div>

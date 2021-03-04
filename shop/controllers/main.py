@@ -369,7 +369,8 @@ class CustomerPortal(CustomerPortal):
         values = {
             'page_name': 'trees',
             'tree': tree,
-            'user': request.env.user
+            'user': request.env.user,
+            'iframe': 'https://maps.google.com/maps?q=%s&amp;hl=es&amp;z=14&amp;output=embed' %(tree.product_tree_name.gps_location),
         }
         return self._get_page_view_values(tree, access_token, values, 'my_trees_history', False, **kwargs)
 
