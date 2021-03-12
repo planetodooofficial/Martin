@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <record id="menu_shop_thankyou" model="website.menu">
-            <field name="name">Shop Thank</field>
-            <field name="url">/shopping-thankyou</field>
-            <field name="parent_id" ref="website.main_menu"/>
-            <field name="sequence">55</field>
-        </record>
+<!--        <record id="menu_shop_thankyou" model="website.menu">-->
+<!--            <field name="name">Shop Thank</field>-->
+<!--            <field name="url">/shopping-thankyou</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence">55</field>-->
+<!--        </record>-->
+
+
+<!--        <menuitem name="Shop Thank"-->
+<!--            id="menu_shop_thankyou"-->
+<!--            sequence="100"-->
+<!--            parent="website.main_menu"-->
+<!--            groups="base.group_public"/>-->
 
 
         <template id="shop_thank" name="shopping thank you">

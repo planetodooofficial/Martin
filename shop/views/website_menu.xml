@@ -322,9 +322,9 @@
 
     <template id="website.option_header_brand_logo" inherit_id="website.placeholder_header_brand" name="Header Brand Logo" active="True">
         <xpath expr="//*[@id='o_fake_navbar_brand']" position="replace">
-<!--            <a href="/" t-attf-class="navbar-brand logo #{_link_class}">-->
-<!--                <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>-->
-<!--            </a>-->
+            <!--            <a href="/" t-attf-class="navbar-brand logo #{_link_class}">-->
+            <!--                <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>-->
+            <!--            </a>-->
         </xpath>
     </template>
 
@@ -514,6 +514,16 @@
         </t>
     </template>
 
+
+    <!--    Overriding Sign Up to Label as LOGIN and redirect to login-1-->
+    <template id="portal.user_sign_in" name="User Sign In" inherit_id="portal.placeholder_user_sign_in">
+        <xpath expr="." position="inside">
+            <li groups="base.group_public" t-attf-class="#{_item_class} o_no_autohide_item">
+                <!--                <a t-attf-href="/web/login" t-attf-class="#{_link_class}">Sign in</a>-->
+                <a t-attf-href="/login-1" t-attf-class="#{_link_class}">LOGIN</a>
+            </li>
+        </xpath>
+    </template>
 
 
 
