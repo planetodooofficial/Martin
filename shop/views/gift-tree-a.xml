@@ -140,7 +140,7 @@
                                             <div class="pt32"/>
                                             <div class="row">
                                                 <div class="col 1.5">
-                                                    <label style="padding-top: 50px !important;"for="email" class="green_headn ls_2 fs_20 pr-5">Email:</label>
+                                                    <label style="padding-top: 50px !important;" for="email" class="green_headn ls_2 fs_20 pr-5">Email:</label>
                                                 </div>
                                                 <div class="col 10.5">
                                                     <input style="width:100% !important" type="text" id="email" name="email" required="required" rows="1" cols="50" class="txtarea"/>
