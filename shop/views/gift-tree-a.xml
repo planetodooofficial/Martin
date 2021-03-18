@@ -117,19 +117,35 @@
                                             <input type="hidden"  id="active-slider" name="active-slider"/>
                                             <input type="hidden"  id="tree_id" name="tree_id" t-att-value="tree_id"/>
 
-                                            <label for="dear" class="green_headn ls_2 fs_20 pr-5">Dear:</label>
-                                            <textarea name="dear_name" id="dear_name" required="required" rows="3" cols="50"
-                                                      class="txtarea"/>
+                                            <div class="row">
+                                                <div class="col 1.5">
+                                                    <label style="padding-top: 50px !important;" for="dear" class="green_headn ls_2 fs_20 pr-5">Dear:</label>
+                                                </div>
+                                                <div class="col 10.5">
+                                                    <textarea style="width:100% !important" name="dear_name" id="dear_name" required="required" rows="3" cols="50"
+                                                          class="txtarea"/>
+                                                </div>
+                                            </div>
                                             <br/>
                                             <div class="pt32"/>
-                                            <label for="message" class="green_headn ls_2 fs_20 pr-5">Message:</label>
-                                            <textarea name="mail_msg" id="mail_msg" required="required" rows="5" cols="50" class="txtarea"/>
+                                            <div class="row">
+                                                <div class="col 1.5">
+                                                    <label style="padding-top: 50px !important;" for="message" class="green_headn ls_2 fs_20 pr-5">Message:</label>
+                                                </div>
+                                                <div class="col 10.5">
+                                                    <textarea style="width:100% !important" name="mail_msg" id="mail_msg" required="required" rows="5" cols="50" class="txtarea"/>
+                                                </div>
+                                            </div>
                                             <br/>
-
                                             <div class="pt32"/>
-                                            <label for="email" class="green_headn ls_2 fs_20 pr-5">Email:</label>
-                                            <input type="text" id="email" name="email" required="required" rows="1" cols="50" class="txtarea"/>
-
+                                            <div class="row">
+                                                <div class="col 1.5">
+                                                    <label style="padding-top: 50px !important;"for="email" class="green_headn ls_2 fs_20 pr-5">Email:</label>
+                                                </div>
+                                                <div class="col 10.5">
+                                                    <input style="width:100% !important" type="text" id="email" name="email" required="required" rows="1" cols="50" class="txtarea"/>
+                                                </div>
+                                            </div>
                                             <br/>
                                             <br/>
                                             <div align="center">
