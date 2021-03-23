@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!--    <data>-->
-<!--        <record id="menu_plant_tree_1_form" model="website.menu">-->
-<!--            <field name="name">TREE</field>-->
-<!--            <field name="url">/plant-a-tree</field>-->
-<!--            <field name="parent_id" ref="website.main_menu"/>-->
-<!--            <field name="sequence">55</field>-->
-<!--        </record>-->
+    <!--    <data>-->
+    <!--        <record id="menu_plant_tree_1_form" model="website.menu">-->
+    <!--            <field name="name">TREE</field>-->
+    <!--            <field name="url">/plant-a-tree</field>-->
+    <!--            <field name="parent_id" ref="website.main_menu"/>-->
+    <!--            <field name="sequence">55</field>-->
+    <!--        </record>-->
 
 
-        <template id="plant_trees" name=" Tree">
-            <t t-name="website.plant-a-tree">
-                <t t-call="website.layout">
-                    <div id="wrap" class="oe_structure">
-                        <section class="s_picture pt48 pb24 o_colored_level" data-name="Picture">
-                            <div class="container">
-                                <div class="row s_nb_column_fixed">
-                                    <div class="col-lg-12 s_title pt16 pb16" data-name="Title">
-                                        <div class="heading_main1" style="text-align: center;">
-                                            <div class="fs_55 ls_2 ln_55">Where</div>
-                                            <div class="fs_42 ls_2 ln_55">would you like to</div>
-                                            <div class="fs_58 ls_2 ln_55">plant a tree?</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8 offset-lg-2 pb24 o_colored_level">
-                                        <figure class="figure">
-                                            <img src="/shop/static/src/images/plant_tree.png"
-                                                 class="figure-img img-fluid rounded padding-large" alt=""
-                                                 data-original-title="" title="" aria-describedby="tooltip538537"
-                                                 loading="lazy" data-original-id="686"
-                                                 data-original-src="/shop/static/src/images/plant_tree.png"
-                                                 data-mimetype="image/png" data-resize-width="704"/>
-                                        </figure>
+    <template id="plant_trees" name=" Tree">
+        <t t-name="website.plant-a-tree">
+            <t t-call="website.layout">
+                <div id="wrap" class="oe_structure">
+                    <section class="s_picture pt48 pb24 o_colored_level" data-name="Picture">
+                        <div class="container">
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-12 s_title pt16 pb16" data-name="Title">
+                                    <div class="heading_main1" style="text-align: center;">
+                                        <div class="fs_55 ls_2 ln_55">Where</div>
+                                        <div class="fs_42 ls_2 ln_55">would you like to</div>
+                                        <div class="fs_58 ls_2 ln_55">plant a tree?</div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
-                </t>
-            </t>
+                                <div class="col-lg-8 offset-lg-2 pb24 o_colored_level">
+                                    <figure class="figure">
+                                        <img src="/shop/static/src/images/plant_tree.png"
+                                             class="figure-img img-fluid rounded padding-large" alt=""
+                                             data-original-title="" title="" aria-describedby="tooltip538537"
+                                             loading="lazy" data-original-id="686"
+                                             data-original-src="/shop/static/src/images/plant_tree.png"
+                                             data-mimetype="image/png" data-resize-width="704"
+                                             usemap="#treemap"/>
 
-        </template>
-<!--    </data>-->
+                                        <map name="treemap">
+                                            <area target="_self" alt="malawi" title="malawi" name="malawi" href="malawi-trees" coords="607,172,36" shape="circle"/>
+                                            <area target="_self" alt="all_prod" title="all_prod" href="#" coords="372,117,36" shape="circle"/>
+                                            <area target="_self" alt="second_loc" title="second_loc" href="#" coords="216,159,36" shape="circle"/>
+                                            <area target="_self" alt="third_loc" title="third_loc" href="#" coords="162,91,36" shape="circle"/>
+                                        </map>
+
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </t>
+        </t>
+
+    </template>
+    <!--    </data>-->
 </odoo>
         
